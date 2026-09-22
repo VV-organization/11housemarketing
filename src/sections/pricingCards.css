@@ -70,3 +70,24 @@
   .eh-journey .eh-pricing-cards__card[data-plan="pro"]::before { animation: none; opacity: .7; }
 }
 .eh-journey[data-motion="reduced"] .eh-pricing-cards__card[data-plan="pro"]::before { animation: none; opacity: .7; }
+
+/* Supplied cover-flow reference: side cards recede behind the central plan. */
+@media (min-width: 1001px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .eh-journey:not([data-motion="reduced"]) .eh-pricing-cards__grid { perspective: 1400px; }
+  .eh-journey:not([data-motion="reduced"]) .eh-pricing-cards__card {
+    transition: transform .8s cubic-bezier(.22,1,.36,1), border-color .35s, box-shadow .35s;
+    backface-visibility: hidden;
+  }
+  .eh-journey:not([data-motion="reduced"]) .eh-pricing-cards__card[data-plan="start"] {
+    transform: translateX(38%) rotateY(28deg) scale(.88);
+    z-index: 0;
+  }
+  .eh-journey:not([data-motion="reduced"]) .eh-pricing-cards__card[data-plan="studio"] {
+    transform: translateX(-38%) rotateY(-28deg) scale(.88);
+    z-index: 0;
+  }
+  .eh-journey:not([data-motion="reduced"]) .eh-pricing-cards__card[data-plan="pro"] { transform: none; z-index: 2; }
+  .eh-journey:not([data-motion="reduced"]) .eh-pricing-cards__grid:is(:hover, :focus-within) .eh-pricing-cards__card {
+    transform: translateX(0) rotateY(0) scale(1);
+  }
+}
