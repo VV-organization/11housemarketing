@@ -156,9 +156,10 @@ export function PricingOrbit({
                 <div className="pricing-native-price"><strong>{plan.price}</strong><small>{plan.period}</small></div>
               </header>
               <p className="pricing-native-audience">{plan.audience}</p>
-              <p className="pricing-native-commission"><span>Комиссия с продаж</span><strong>{plan.commission}</strong></p>
+              <p className="pricing-native-commission"><span>{plan.commissionLabel}</span><strong>{plan.commission}</strong></p>
               <p className="pricing-includes-label">{plan.includesLabel}</p>
               <ul>{plan.cardPoints.map((point) => <li key={point}>{point}</li>)}</ul>
+              <p className="pricing-plan-note">{plan.note}</p>
               <a className="pricing-card-action" href={pricingRegistrationUrl}
                 tabIndex={motionState.phase === 'holding' && motionState.activeKey === plan.key ? 0 : -1}
                 style={{ pointerEvents: motionState.phase === 'holding' && motionState.activeKey === plan.key ? 'auto' : 'none' }}>
@@ -190,11 +191,12 @@ export function PricingOrbit({
             <p>{plan.audience}</p>
             <p className="pricing-fallback-capacity"><strong>{plan.capacityTitle}</strong><br />{plan.capacityDetail}</p>
             <footer>
-              <span>Комиссия</span>
+              <span>{plan.commissionLabel}</span>
               <strong>{plan.commission}</strong>
             </footer>
             <p className="pricing-includes-label">{plan.includesLabel}</p>
             <ul>{plan.cardPoints.map((point) => <li key={point}>{point}</li>)}</ul>
+            <p className="pricing-plan-note">{plan.note}</p>
             <a className="pricing-fallback-action" href={pricingRegistrationUrl} tabIndex={fallback && motionState.activeKey === plan.key ? 0 : -1}>{pricingActionLabel(plan)}</a>
           </article>
         ))}

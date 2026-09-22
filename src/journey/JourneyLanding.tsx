@@ -11,8 +11,11 @@ import { JourneySceneAdapter } from './JourneySceneAdapter'
 import { attachFinaleScrollCompletion } from './finaleScrollCompletion'
 import { attachOpeningScrollCompletion } from './openingScrollCompletion'
 import { clamp01, sampleFinaleCurtain, sampleJourneyScene, type JourneyLayout } from './journeyMotion'
+import { attachScrollReveal } from './scrollReveal'
+import './scrollReveal.css'
 import './journey.css'
 import './visualSystem.css'
+import './copyAlignment.css'
 
 // Keep the section available for a later launch without mounting its animations.
 const showPractitionerResults = false
@@ -30,6 +33,11 @@ export function JourneyLanding() {
   const [reducedMotion, setReducedMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches
     || (import.meta.env.DEV && new URLSearchParams(window.location.search).has('reduced-motion')))
   const [ready, setReady] = useState(false)
+
+  useLayoutEffect(() => {
+    if (reducedMotion || !rootRef.current) return
+    return attachScrollReveal(rootRef.current)
+  }, [reducedMotion])
 
   useEffect(() => {
     if (reducedMotion) return
@@ -146,11 +154,11 @@ export function JourneyLanding() {
               <span className="eh-journey__split-start"><span>Вся практика<br />астролога</span></span>
               <span className="eh-journey__split-end"><span>в одном<br />приложении</span></span>
             </h1>
-            <a className="eh-journey__start" href="#journey-access" onClick={(event) => navigate(event, '#journey-access')}>
-              Начать
+            <a className="eh-journey__start" href="https://app.elevenhouse.ai/auth?mode=register">
+              Начать бесплатно
             </a>
-            <p className="eh-journey__opening-description">Карты, клиенты, запись, оплаты и AI-помощник — чтобы меньше заниматься рутиной и больше консультировать.</p>
-            <a className="eh-journey__explore" href="#journey-access" aria-label="Листайте вниз — перейти к знакомству с ElevenHouse"><span className="eh-journey__explore-label">Листайте вниз</span><span aria-hidden="true">↓</span></a>
+            <p className="eh-journey__opening-description">Карты, клиенты, запись, оплаты и AI-помощник — чтобы меньше заниматься рутиной и больше консультировать.<small className="eh-opening-free-note">Бесплатный тариф без ограничения по времени</small></p>
+            <a className="eh-journey__explore" href="#journey-access" aria-label="Посмотреть возможности ElevenHouse"><span className="eh-journey__explore-label">Посмотреть возможности</span><span aria-hidden="true">↓</span></a>
           </div>
         </section>
         <ProductExperience reducedMotion={reducedMotion} onNavigate={openSection} />
@@ -167,7 +175,7 @@ export function JourneyLanding() {
               <span className="eh-journey__split-end"><span>больше<br />на консультации</span></span>
             </h2>
             <div className="eh-journey__finale-action">
-              <a href="https://app.elevenhouse.ai">Начать бесплатно</a>
+              <a href="https://app.elevenhouse.ai/auth?mode=register">Начать бесплатно</a>
             </div>
             <FinaleFooter />
           </div>

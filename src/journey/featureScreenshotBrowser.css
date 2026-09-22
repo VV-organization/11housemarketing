@@ -1,0 +1,64 @@
+/* Reference: supplied preview's persistent tabs and text/screenshot composition.
+   All styles are local. Existing cosmic canvas, section heading and tokens stay intact. */
+.eh-journey .eh-feature-browser { width: min(1240px, 100%); }
+.eh-journey .eh-feature-browser__tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 0 32px; }
+.eh-journey .eh-feature-browser__tab { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 17px; border: 1px solid var(--eh-line); border-radius: var(--eh-control-radius); background: rgba(3, 9, 23, .88); color: var(--eh-muted); font: 500 14px/1.4 'Manrope', sans-serif; cursor: pointer; transition: color .18s, border-color .18s, background .18s; }
+.eh-journey .eh-feature-browser__tab img { flex: 0 0 auto; }
+.eh-journey .eh-feature-browser__tab:hover { color: var(--eh-ink); border-color: rgba(226, 202, 121, .5); background: #101b2e; }
+.eh-journey .eh-feature-browser__tab[aria-selected="true"] { color: #f5e6bd; border-color: #e2ca79b8; background: #24241f; }
+.eh-journey .eh-feature-browser :is(button, [role="tabpanel"]):focus-visible { outline: 2px solid var(--eh-accent); outline-offset: 4px; }
+.eh-journey .eh-feature-browser__panel { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.62fr); align-items: start; gap: 28px; animation: eh-feature-panel-in .18s ease-out; }
+.eh-journey .eh-feature-browser__copy { padding: 28px; border: 1px solid var(--eh-line); border-radius: var(--eh-card-radius); background: rgba(3, 9, 23, .92); }
+.eh-journey .eh-feature-browser__copy h3 { font: 400 clamp(26px, 2.4vw, 34px)/1.16 'EH Vetrino', 'Manrope', sans-serif; letter-spacing: 0; color: var(--eh-ink); text-wrap: balance; margin: 0 0 18px; }
+.eh-journey .eh-feature-browser__description { margin: 0; font-size: 15px; line-height: 1.7; color: var(--eh-muted); }
+.eh-journey .eh-feature-browser__steps { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 16px; }
+.eh-journey .eh-feature-browser__steps li { display: grid; grid-template-columns: 24px minmax(0, 1fr); align-items: baseline; gap: 12px; color: var(--eh-ink); font-size: 14px; line-height: 1.6; }
+.eh-journey .eh-feature-browser__steps li > span:first-child { color: var(--eh-accent); font-size: 11px; font-variant-numeric: tabular-nums; }
+.eh-journey .eh-feature-browser__note { padding-top: 18px; border-top: 1px solid var(--eh-line); margin: 22px 0 0; color: var(--eh-subtle); font-size: 12px; line-height: 1.6; }
+.eh-journey .eh-feature-browser__figure { min-width: 0; margin: 0; }
+.eh-journey .eh-feature-browser__screen { position: relative; display: block; padding: 0; width: 100%; aspect-ratio: 1800 / 1024; overflow: hidden; border: 1px solid rgba(161, 186, 220, .32); border-radius: 16px; background: #0b0b1f; cursor: zoom-in; box-shadow: 0 24px 56px -32px #000b; }
+.eh-journey .eh-feature-browser__screen > img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.eh-journey .eh-feature-browser__zoom-icon { display: grid; place-items: center; position: absolute; bottom: 12px; right: 12px; width: 34px; height: 34px; border: 1px solid #e2ca7955; border-radius: 9px; color: #f5e6bd; background: #071221ed; font-size: 21px; }
+.eh-journey .eh-feature-browser__figure figcaption { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px 16px; margin-top: 12px; padding: 6px 12px; border-radius: 10px; background: rgba(3, 9, 23, .92); color: var(--eh-muted); font-size: 12px; line-height: 1.5; }
+.eh-journey .eh-feature-browser__figure figcaption button { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0; border: 0; background: transparent; color: #e2ca79; font: inherit; white-space: nowrap; cursor: pointer; }
+.eh-journey .eh-feature-browser__dialog { width: min(1500px, calc(100vw - 48px)); max-width: none; max-height: calc(100dvh - 48px); padding: 0; margin: auto; overflow: auto; overscroll-behavior: contain; border: 1px solid #e2ca7966; border-radius: 18px; background: #071221; color: var(--eh-ink); }
+.eh-journey .eh-feature-browser__dialog::backdrop { background: rgba(1, 5, 14, .92); }
+.eh-journey .eh-feature-browser__dialog-content { padding: 18px; }
+.eh-journey .eh-feature-browser__dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.eh-journey .eh-feature-browser__dialog-heading h3 { margin: 0; font: 500 16px/1.5 'Manrope', sans-serif; }
+.eh-journey .eh-feature-browser__dialog-heading button { display: flex; align-items: center; gap: 12px; flex-shrink: 0; min-height: 44px; border: 1px solid var(--eh-line); border-radius: 10px; padding: 8px 14px; font: inherit; font-size: 13px; color: var(--eh-accent); background: #101b2e; cursor: pointer; }
+.eh-journey .eh-feature-browser__dialog-heading button span { font-size: 24px; }
+.eh-journey .eh-feature-browser__zoom-scroll { overflow: auto; overscroll-behavior: contain; max-height: calc(100dvh - 210px); border-radius: 9px; }
+.eh-journey .eh-feature-browser__zoom-scroll img { display: block; width: 100%; min-width: 1000px; height: auto; aspect-ratio: auto; object-fit: contain; }
+.eh-journey .eh-feature-browser__dialog-content > p { margin: 14px 0 0; font-size: 12px; line-height: 1.5; color: var(--eh-muted); }
+@keyframes eh-feature-panel-in { from { opacity: .45; } to { opacity: 1; } }
+@media (max-width: 1000px) {
+  .eh-journey .eh-feature-browser__panel { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .eh-journey .eh-feature-browser__copy { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 28px; }
+  .eh-journey .eh-feature-browser__copy h3 { margin-bottom: 0; }
+  .eh-journey .eh-feature-browser__description { grid-column: 1; }
+  .eh-journey .eh-feature-browser__steps { grid-column: 2; grid-row: 1 / 3; margin-top: 0; align-content: center; }
+  .eh-journey .eh-feature-browser__note { grid-column: 1 / -1; margin-top: 0; }
+}
+@media (max-width: 600px) {
+  .eh-journey .eh-feature-browser__tabs { gap: 8px; margin-bottom: 24px; justify-content: flex-start; }
+  .eh-journey .eh-feature-browser__tab { padding: 10px 12px; gap: 7px; font-size: 12px; min-height: 46px; }
+  .eh-journey .eh-feature-browser__tab img { width: 18px; height: 18px; }
+  .eh-journey .eh-feature-browser__copy { display: block; padding: 24px 20px; }
+  .eh-journey .eh-feature-browser__copy h3 { margin-bottom: 16px; }
+  .eh-journey .eh-feature-browser__steps { margin-top: 24px; }
+  .eh-journey .eh-feature-browser__note { margin-top: 22px; }
+  .eh-journey .eh-feature-browser__screen { border-radius: 12px; }
+  .eh-journey .eh-feature-browser__figure figcaption { font-size: 11px; }
+  .eh-journey .eh-feature-browser__dialog { width: calc(100vw - 24px); max-height: calc(100dvh - 24px); }
+  .eh-journey .eh-feature-browser__dialog-content { padding: 12px; }
+  .eh-journey .eh-feature-browser__dialog-heading { align-items: flex-start; }
+  .eh-journey .eh-feature-browser__dialog-heading h3 { font-size: 13px; }
+  .eh-journey .eh-feature-browser__dialog-heading button { font-size: 0; gap: 0; padding: 6px 12px; }
+}
+.eh-journey[data-motion="reduced"] .eh-feature-browser__panel { animation: none; }
+.eh-journey[data-motion="reduced"] .eh-feature-browser__tab { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .eh-journey .eh-feature-browser__panel { animation: none; }
+  .eh-journey .eh-feature-browser__tab { transition: none; }
+}

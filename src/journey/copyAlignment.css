@@ -1,0 +1,7 @@
+.eh-journey .eh-opening-free-note { display: block; margin-top: 10px; font-size: .8em; line-height: 1.5; color: #aebed0; }
+.eh-journey .eh-finale-footer__copyright { line-height: 1.65; }
+.eh-journey .eh-finale-footer__documents > :is(a, span) { min-width: 0; font: inherit; color: inherit; text-align: left; line-height: 1.5; }
+
+.eh-journey .eh-finale-footer__documents > :is(a, span) {
+  overflow-wrap: anywhere;
+}

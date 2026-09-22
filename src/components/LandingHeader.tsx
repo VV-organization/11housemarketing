@@ -11,7 +11,7 @@ type LandingHeaderProps = {
 const navigation = [
   { label: 'Возможности', target: '#product-proof-title' },
   { label: 'Тарифы', target: '#pricing-title' },
-  { label: 'FAQ', target: '#faq-title' },
+  { label: 'Вопросы', target: '#faq-title' },
 ]
 
 export function LandingHeader({ onNavigate, destinations }: LandingHeaderProps) {
@@ -34,7 +34,7 @@ export function LandingHeader({ onNavigate, destinations }: LandingHeaderProps) 
 
       <div className="landing-header__actions">
         <a className="landing-header__login" href="https://app.elevenhouse.ai">Войти</a>
-        <a className="landing-header__cta" href="https://app.elevenhouse.ai">Создать кабинет</a>
+        <a className="landing-header__cta" href="https://app.elevenhouse.ai/auth?mode=register">Начать бесплатно</a>
       </div>
     </header>
   )

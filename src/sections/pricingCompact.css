@@ -70,3 +70,13 @@
   .pricing-section .pricing-motion-stage { margin-top: 32px; }
   .pricing-section .pricing-plan-switcher { margin-top: calc(24px - var(--pricing-frame-inset, 0px)); }
 }
+
+/* Longer reference copy stays within the existing projected cards. */
+.pricing-section .pricing-native-body { padding-top: 4cqw; }
+.pricing-section .pricing-native-audience { min-height: 0; margin-top: 2cqw; }
+.pricing-section .pricing-native-commission { margin-top: 2cqw; padding-top: 2cqw; }
+.pricing-section .pricing-native-body .pricing-includes-label { margin-top: 2cqw; }
+.pricing-section .pricing-native-body ul { font-size: 3.2cqw; line-height: 1.35; gap: 1cqw; margin: 2cqw 0; }
+.pricing-section .pricing-plan-note { margin: 0 0 2cqw; font-size: 2.8cqw; line-height: 1.4; color: #becbdb; }
+.pricing-section .pricing-section__terms { max-width: 1000px; margin: 24px auto 0; color: #becbdb; font-size: 13px; line-height: 1.6; text-align: center; }
+.pricing-section .pricing-section__terms p { margin: 8px 0; }

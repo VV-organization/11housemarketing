@@ -131,9 +131,9 @@ export function PricingSection() {
   return (
     <section className="pricing-section" id="pricing" aria-labelledby="pricing-title" ref={sectionRef}>
       <header className="pricing-section__heading">
-        <h2 id="pricing-title">Начните бесплатно</h2>
-        <p className="pricing-section__subtitle">Расширяйте возможности по мере роста</p>
-        <p>Выберите объём инструментов под текущую практику. Pro остаётся основным тарифом для регулярной работы.</p>
+        <h2 id="pricing-title">Начните бесплатно.</h2>
+        <p className="pricing-section__subtitle">Расширяйте возможности по мере роста.</p>
+        <p>Полноценная практика — на Start. AI и ваши автоматизации — в подписке.</p>
       </header>
 
       <div
@@ -170,6 +170,8 @@ export function PricingSection() {
           ))}
         </div>
       </div>
+
+      <div className="pricing-section__terms"><p>Клиенты, консультации и платежи — без ограничений по количеству. Без триала: Start доступен постоянно.</p><p>* Макет: комиссии и лимиты AI, хранения и видеосвязи предварительные. Финальные условия нужно подтвердить до публикации.</p></div>
 
       <p className="pricing-section__status" aria-live="polite">Выбран тариф {selectedPlan.name}</p>
 

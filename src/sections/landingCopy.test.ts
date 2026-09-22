@@ -64,11 +64,9 @@ describe('marketing brief copy contract', () => {
     const headerCopy = [
       'Возможности',
       'Тарифы',
-      'FAQ',
-      'RU',
-      'EN',
+      'Вопросы',
       'Войти',
-      'Создать кабинет',
+      'Начать бесплатно',
     ]
 
     headerCopy.forEach((copy) => expect(componentSource).toContain(copy))
@@ -80,9 +78,9 @@ describe('marketing brief copy contract', () => {
       'От построения карты до оплаты —<br />один рабочий процесс.',
       'AI берёт рутину на себя.<br />Последнее слово — за вами.',
       'Один кабинет вместо<br />нескольких сервисов.',
-      '<h2 id="pricing-title">Начните бесплатно</h2>',
-      '<p className="pricing-section__subtitle">Расширяйте возможности по мере роста</p>',
-      'Частые вопросы',
+      '<h2 id="pricing-title">Начните бесплатно.</h2>',
+      '<p className="pricing-section__subtitle">Расширяйте возможности по мере роста.</p>',
+      'Есть вопросы? Давайте разберёмся.',
       'Соберите практику<br />в одном кабинете.',
     ]
 
@@ -96,7 +94,8 @@ describe('marketing brief copy contract', () => {
     expect(heroComponentSource).not.toContain('Больше времени на консультации')
     expect(clientStorySource).not.toContain('client-story__title-part')
     expect(clientStorySource).not.toContain('client-story__header')
-    expect(clientStorySource).toContain('Меньше рутины — больше времени на клиентов')
+    expect(clientStorySource).toContain('Меньше рутины.')
+    expect(clientStorySource).toContain('Больше времени<br />на клиентов.')
   })
 
   it('shows four setup steps followed by five benefit-led product screens', () => {
@@ -213,42 +212,40 @@ describe('marketing brief copy contract', () => {
     expect(resultsPosition).toBeLessThan(pricingPosition)
   })
 
-  it('compares four workflows and retains the original outcome metrics', () => {
+  it('connects four separate tasks to one unified workspace', () => {
     const copy = [
       'Переписки и таблицы', 'Единая история клиента',
       'Запись вручную', 'Онлайн-запись',
-      'Отдельные ссылки на оплату', 'Оплата выбранной услуги',
-      'Подготовка разбора с нуля', 'Карта и AI-черновик под контролем астролога',
-      '−12 ч', '×3', '+34%', '24/7',
+      'Ссылки на оплату', 'Оплата выбранной услуги',
+      'Разбор с нуля', 'Карта и AI-черновик',
+      'С вашей проверкой и трактовками', 'Единый кабинет',
     ]
     copy.forEach((text) => expect(clientStorySource).toContain(text))
     expect(clientStorySource).not.toContain('workflow-compare__source')
-    expect(clientStorySource).toContain('<WorkflowMetrics')
+    expect(clientStorySource).not.toContain('<WorkflowMetrics')
+    expect(clientStorySource).toContain('aria-controls={`eh-workflow-result-${index}`}')
     expect(journeySource.indexOf('<OneClientStory />')).toBeGreaterThan(journeySource.indexOf('<ProductExperience '))
     expect(journeySource.indexOf('<OneClientStory />')).toBeLessThan(journeySource.indexOf('<PricingSection />'))
   })
 
-  it('contains all eight risk-closing FAQ questions', () => {
+  it('contains the six FAQ questions from the supplied reference', () => {
     const faqQuestions = [
-      'Я не дружу с техникой — справлюсь?',
-      'Можно ли перенести существующих клиентов?',
-      'Где хранятся клиентские данные?',
-      'Как подключаются и выводятся оплаты?',
-      'Что происходит с моими материалами и трактовками?',
-      'AI напишет разбор за меня — это этично?',
-      'Можно ли работать без AI?',
-      'Что останется после отмены тарифа?',
-    ]
-
-    faqQuestions.forEach((question) => expect(sectionSource).toContain(question))
-    expect(faqSource.match(/question:/g) ?? []).toHaveLength(8)
+      "Как начать пользоваться?",
+      "Можно работать с текущими клиентами?",
+      "Как устроены оплаты?",
+      "Что делает AI, а что остаётся за мной?",
+      "Можно пользоваться сервисом без AI?",
+      "Что произойдёт, если отменить подписку?"
+]
+    faqQuestions.forEach((question) => expect(faqSource).toContain(question))
+    expect(faqSource.match(/"question":/g) ?? []).toHaveLength(6)
   })
 
   it('keeps the approved tariff economics and confirmed final links', () => {
     expect(pricingPlans.map((plan) => [plan.name, plan.price, plan.commission])).toEqual([
-      ['Старт', '0 ₽', '8%'],
-      ['Pro', '1 990 ₽', '4%'],
-      ['Studio', '4 990 ₽', '2%'],
+      ['Start', '0 ₽', '8%*'],
+      ['Team Pro', '2 490 ₽', '6%*'],
+      ['Studio', '4 990 ₽', '5%*'],
     ])
     expect(finalCtaSource).toContain('https://app.elevenhouse.ai/auth?mode=register')
     expect(finalCtaSource).toContain('Без банковской карты')
