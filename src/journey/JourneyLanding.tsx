@@ -3,7 +3,7 @@ import { CosmicHero } from '../components/CosmicHero'
 import { LandingHeader } from '../components/LandingHeader'
 import { OneClientStory } from '../sections/OneClientStory'
 import { PractitionerResults } from '../sections/PractitionerResults'
-import { PricingSection } from '../sections/PricingSection'
+import { PricingCardsSection } from '../sections/PricingCardsSection'
 import { FaqSection } from '../sections/FaqSection'
 import { ProductExperience } from './ProductExperience'
 import { FinaleFooter } from './FinaleFooter'
@@ -165,7 +165,7 @@ export function JourneyLanding() {
         <div id="journey-commercial" tabIndex={-1} className="landing-sections eh-journey__commercial" data-entered="true" data-motion={reducedMotion ? 'reduced' : 'full'}>
           <OneClientStory />
           {showPractitionerResults && <PractitionerResults />}
-          <PricingSection />
+          <PricingCardsSection />
           <FaqSection />
         </div>
         <section className="eh-journey__finale" id="journey-finale" tabIndex={-1} ref={finaleRef} aria-labelledby="journey-finale-title">

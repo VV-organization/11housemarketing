@@ -62,3 +62,27 @@
   .eh-journey .eh-feature-browser__panel { animation: none; }
   .eh-journey .eh-feature-browser__tab { transition: none; }
 }
+
+/* Match description and screenshot frames; keep the caption in its own row. */
+@media (min-width: 1001px) {
+  .eh-journey .eh-feature-browser__panel { grid-template-rows: auto auto; row-gap: 0; }
+  .eh-journey .eh-feature-browser__copy { grid-column: 1; grid-row: 1; align-self: stretch; display: flex; flex-direction: column; }
+  .eh-journey .eh-feature-browser__copy .eh-feature-browser__note { margin-top: auto; padding-top: 18px; }
+  .eh-journey .eh-feature-browser__copy .eh-feature-browser__steps { margin-bottom: 22px; }
+  .eh-journey .eh-feature-browser__figure { grid-column: 2; grid-row: 1 / span 2; display: grid; grid-template-rows: subgrid; align-self: stretch; }
+  .eh-journey .eh-feature-browser__screen { height: 100%; align-self: stretch; }
+}
+
+/* Frosted surface from the supplied glass reference, tinted to the cosmic palette. */
+.eh-journey .eh-feature-browser__copy {
+  background: linear-gradient(135deg, rgba(173, 191, 220, .16), rgba(12, 23, 43, .48) 48%, rgba(75, 89, 115, .22));
+  -webkit-backdrop-filter: blur(26px) saturate(115%);
+  backdrop-filter: blur(26px) saturate(115%);
+  border-color: rgba(216, 224, 239, .32);
+  box-shadow: inset 0 1px 0 rgba(245, 241, 225, .15), inset 0 -1px 0 rgba(166, 186, 218, .06), 0 18px 48px -28px rgba(1, 6, 17, .7);
+}
+.eh-journey .eh-feature-browser__copy .eh-feature-browser__description { color: #d0d8e6; }
+.eh-journey .eh-feature-browser__copy .eh-feature-browser__note { color: #b7c5d9; border-top-color: rgba(216, 224, 239, .22); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .eh-journey .eh-feature-browser__copy { background: rgba(14, 25, 44, .94); }
+}

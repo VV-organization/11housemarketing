@@ -1,0 +1,72 @@
+/* Scoped to the marketing pricing section: existing typography and navy/gold palette. */
+.eh-journey .eh-pricing-cards { padding-block: clamp(72px, 7vw, 112px); background: #040914; }
+.eh-journey .eh-pricing-cards .pricing-section__heading { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; max-width: 1100px; margin-inline: auto; }
+.eh-journey .eh-pricing-cards .pricing-section__heading h2 { margin: 0; font-size: clamp(36px, 4.8vw, 72px); line-height: 1.12; }
+.eh-journey .eh-pricing-cards .pricing-section__heading p { margin: 0; max-width: 850px; font-size: 16px; line-height: 1.6; }
+.eh-journey .eh-pricing-cards .pricing-section__heading .pricing-section__subtitle { font-size: clamp(22px, 2.4vw, 34px); color: #edf1f7; line-height: 1.3; }
+.eh-journey .eh-pricing-cards__grid { display: grid; grid-template-columns: 1fr 1.08fr 1fr; align-items: stretch; gap: 24px; max-width: 1280px; margin: 76px auto 0; padding: 20px 8px; }
+.eh-journey .eh-pricing-cards__card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: clamp(24px, 2.2vw, 34px); margin-block: 24px; border: 1px solid #9aaec636; border-radius: 18px; background: #091323; color: #edf1f7; transform-origin: center; transition: transform .5s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s; }
+.eh-journey .eh-pricing-cards__card[data-plan="pro"] { margin-block: 0; padding-block: clamp(48px, 4vw, 58px); background: #101d30; border-color: #e2ca7980; box-shadow: 0 22px 60px -32px #020710; z-index: 1; }
+.eh-journey .eh-pricing-cards__top { display: flex; align-items: center; justify-content: space-between; min-height: 44px; margin-bottom: 32px; gap: 12px; }
+.eh-journey .eh-pricing-cards__top img { object-fit: contain; }
+.eh-journey .eh-pricing-cards__top > span { color: #e2ca79; border: 1px solid #e2ca7955; border-radius: 6px; padding: 6px 9px; font-size: 11px; }
+.eh-journey .eh-pricing-cards__name { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; min-height: 42px; }
+.eh-journey .eh-pricing-cards__name h3 { font-size: clamp(25px, 2.3vw, 34px); font-weight: 550; line-height: 1.2; letter-spacing: -.035em; margin: 0; white-space: nowrap; }
+.eh-journey .eh-pricing-cards__name > span { font-size: 11px; line-height: 1.5; color: #aebed0; text-align: right; }
+.eh-journey .eh-pricing-cards__audience { min-height: 66px; margin: 12px 0 24px; color: #b9c5d6; font-size: 14px; line-height: 1.6; }
+.eh-journey .eh-pricing-cards__price { display: flex; flex-direction: column; gap: 7px; margin: 0; }
+.eh-journey .eh-pricing-cards__price strong { font-size: clamp(38px, 3.6vw, 54px); font-weight: 550; line-height: 1.1; letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
+.eh-journey .eh-pricing-cards__price > span { color: #aebed0; font-size: 12px; }
+.eh-journey .eh-pricing-cards__commission { color: #b9c5d6; font-size: 12px; margin: 24px 0 20px; }
+.eh-journey .eh-pricing-cards__commission strong { color: #f2dfaa; }
+.eh-journey .eh-pricing-cards__action { display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 52px; padding: 12px 16px; border: 1px solid #e2ca7980; border-radius: 8px; color: #f5e6bd; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
+.eh-journey .eh-pricing-cards__action > span { font-size: 23px; font-weight: 400; }
+.eh-journey .eh-pricing-cards__card[data-plan="pro"] .eh-pricing-cards__action { background: #e2ca79; color: #121b29; }
+.eh-journey .eh-pricing-cards__action:hover { background: #e2ca791a; }
+.eh-journey .eh-pricing-cards__card[data-plan="pro"] .eh-pricing-cards__action:hover { background: #f0d990; }
+.eh-journey .eh-pricing-cards__action:focus-visible { outline: 2px solid #e2ca79; outline-offset: 5px; }
+.eh-journey .eh-pricing-cards__includes { display: flex; align-items: center; gap: 14px; font-size: 12px; line-height: 1.5; color: #e6d5a1; margin: 28px 0 20px; }
+.eh-journey .eh-pricing-cards__includes::after { content: ''; flex: 1; height: 1px; background: #9aaec62e; }
+.eh-journey .eh-pricing-cards__card ul { display: grid; gap: 14px; margin: 0 0 28px; padding: 0; list-style: none; font-size: 13px; line-height: 1.55; color: #c6d0de; }
+.eh-journey .eh-pricing-cards__card li { position: relative; padding-left: 22px; }
+.eh-journey .eh-pricing-cards__card li::before { content: '✓'; position: absolute; left: 0; color: #e2ca79; }
+.eh-journey .eh-pricing-cards__card footer { margin-top: auto; padding-top: 20px; border-top: 1px solid #9aaec62e; color: #9eafc5; font-size: 12px; line-height: 1.6; }
+.eh-journey .eh-pricing-cards__card footer p { margin: 0 0 8px; }
+.eh-journey .eh-pricing-cards__terms { max-width: 1000px; margin: 32px auto 0; text-align: center; color: #94a5bd; font-size: 12px; line-height: 1.7; }
+.eh-journey .eh-pricing-cards__terms p { margin: 8px 0; }
+@media (hover: hover) and (pointer: fine) {
+  .eh-journey .eh-pricing-cards__card:hover { transform: translateY(-10px) scale(1.035); border-color: #e2ca79b0; box-shadow: 0 24px 60px -26px #01050d; z-index: 2; }
+}
+.eh-journey .eh-pricing-cards__card:focus-within { border-color: #e2ca79; }
+@media (max-width: 1000px) {
+  .eh-journey .eh-pricing-cards__grid { grid-template-columns: 1fr; gap: 24px; max-width: 600px; margin-top: 32px; padding: 0; }
+  .eh-journey .eh-pricing-cards__card { margin: 0 12px; padding: 28px; }
+  .eh-journey .eh-pricing-cards__card[data-plan="pro"] { margin: 0; padding: 36px; }
+  .eh-journey .eh-pricing-cards__audience { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eh-journey .eh-pricing-cards__card { transition: none; }
+  .eh-journey .eh-pricing-cards__card:hover { transform: none; }
+}
+.eh-journey[data-motion="reduced"] .eh-pricing-cards__card { transition: none; transform: none; }
+
+/* A breathing gold halo behind the recommended card, without tinting its content. */
+.eh-journey .eh-pricing-cards__card[data-plan="pro"]::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 36px 6px #edc45438, 0 22px 76px 12px #dfaa3430;
+  opacity: .6;
+  animation: eh-pricing-gold-breathe 4.8s ease-in-out infinite;
+}
+@keyframes eh-pricing-gold-breathe {
+  0%, 100% { opacity: .45; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eh-journey .eh-pricing-cards__card[data-plan="pro"]::before { animation: none; opacity: .7; }
+}
+.eh-journey[data-motion="reduced"] .eh-pricing-cards__card[data-plan="pro"]::before { animation: none; opacity: .7; }
