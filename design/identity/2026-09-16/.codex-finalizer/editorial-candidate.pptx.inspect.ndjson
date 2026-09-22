@@ -1,0 +1,97 @@
+{"kind":"deck","id":"pr/zpo1c2","name":"Deck"}
+{"kind":"layout","layoutId":"599c7bff-0d5a-4bee-b271-5a96865457d8","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"5c95e868-4797-42a1-b130-9827193918e0","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/izqk1c","slide":1,"title":"ELEVENHOUSE","textShapes":5}
+{"kind":"textbox","id":"sh/jupcj2lo","slide":1,"name":"ELEVENHOUSE","text":"ELEVENHOUSE","textPreview":"ELEVENHOUSE","textChars":11,"textLines":1,"bbox":[64,53,630,25]}
+{"kind":"textbox","id":"sh/kvyts7m9","slide":1,"name":"АЙДЕНТИКА / 2026","text":"АЙДЕНТИКА / 2026","textPreview":"АЙДЕНТИКА / 2026","textChars":16,"textLines":1,"bbox":[1265,53,280,25]}
+{"kind":"textbox","id":"sh/vq5cfils","slide":1,"name":"Для астрологов.\nДля тех, кто рядом.","text":"Для астрологов.\nДля тех, кто рядом.","textPreview":"Для астрологов. | Для тех, кто рядом.","textChars":35,"textLines":2,"bbox":[71,675,780,115]}
+{"kind":"textbox","id":"sh/wretonmx","slide":1,"name":"ПРАКТИКА / ЛЮДИ / СВЯЗИ","text":"ПРАКТИКА / ЛЮДИ / СВЯЗИ","textPreview":"ПРАКТИКА / ЛЮДИ / СВЯЗИ","textChars":23,"textLines":1,"bbox":[69,845,780,30]}
+{"kind":"textbox","id":"sh/xsnuhs3i","slide":1,"name":"elevenhouse.ai","text":"elevenhouse.ai","textPreview":"elevenhouse.ai","textChars":14,"textLines":1,"bbox":[1297,845,250,30]}
+{"kind":"image","id":"im/8vytw7m5","slide":1,"name":"","alt":"wordmark-navy.svg","bbox":[66,180,740,441]}
+{"kind":"image","id":"im/vypc7mlw","slide":1,"name":"","alt":"editorial-seal.png","bbox":[934,157,606,608]}
+{"kind":"notes","id":"nt/izqk1c","slide":1,"text":"Логотип: предоставленный пользователем Frame 1.png; векторная геометрия из существующих исходников design/logo/2026-09-16. Цвета: navy #152037, gold #E2CA79, ivory #F2F1EB. Редакционная композиция: референс пользователя 16.15.32. Фото — новый концептуальный мокап."}
+{"kind":"slide","id":"sl/wyl3i3","slide":2,"title":"СВОЙ КРУГ","textShapes":5}
+{"kind":"textbox","id":"sh/tw3i14v6","slide":2,"name":"СВОЙ КРУГ","text":"СВОЙ КРУГ","textPreview":"СВОЙ КРУГ","textChars":9,"textLines":1,"bbox":[64,54,500,30]}
+{"kind":"textbox","id":"sh/6tsj6pwf","slide":2,"name":"Астролог рядом.\nПрактика в порядке.","text":"Астролог рядом.\nПрактика в порядке.","textPreview":"Астролог рядом. | Практика в порядке.","textChars":35,"textLines":2,"bbox":[64,204,1160,240]}
+{"kind":"textbox","id":"sh/ru10zud0","slide":2,"name":"11-й дом — про связи и единомышленн","text":"11-й дом — про связи и единомышленников.\nElevenHouse — пространство, где астролог\nобъединяет работу и отношения с клиентами.","textPreview":"11-й дом — про связи и единомышленников. | ElevenHouse — пространство, где астролог | объединяет работу и отношения с клиентами.","textChars":124,"textLines":3,"bbox":[70,554,1030,150]}
+{"kind":"textbox","id":"sh/58jix4vu","slide":2,"name":"ELEVENHOUSE  /  АЙДЕНТИКА","text":"ELEVENHOUSE  /  АЙДЕНТИКА","textPreview":"ELEVENHOUSE  /  АЙДЕНТИКА","textChars":25,"textLines":1,"bbox":[64,846,780,25]}
+{"kind":"textbox","id":"sh/i5sj2pwj","slide":2,"name":"02","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1494,846,50,25]}
+{"kind":"image","id":"im/1gfm907q","slide":2,"name":"","alt":"monogram-gold.svg","bbox":[1240,589,265,228]}
+{"kind":"notes","id":"nt/wyl3i3","slide":2,"text":"Смысл 11-го дома — сообщества, единомышленники и коллективное — из справки пользователя. Продуктовая идея: https://elevenhouse.ai."}
+{"kind":"slide","id":"sl/qmpr1b","slide":3,"title":"ПЛАСТИКА ЗНАКА","textShapes":5}
+{"kind":"shape","id":"sh/ri90jmx0","slide":3,"bbox":[800,0,800,900]}
+{"kind":"textbox","id":"sh/sjihcryl","slide":3,"name":"ПЛАСТИКА ЗНАКА","text":"ПЛАСТИКА ЗНАКА","textPreview":"ПЛАСТИКА ЗНАКА","textChars":14,"textLines":1,"bbox":[64,52,620,32]}
+{"kind":"textbox","id":"sh/dkrilwf6","slide":3,"name":"ДЕТАЛЬ СОЕДИНЕНИЯ","text":"ДЕТАЛЬ СОЕДИНЕНИЯ","textPreview":"ДЕТАЛЬ СОЕДИНЕНИЯ","textChars":17,"textLines":1,"bbox":[852,52,680,32]}
+{"kind":"shape","id":"sh/fm90n6xc","slide":3,"bbox":[80,354,635,1]}
+{"kind":"shape","id":"sh/0n21gbyx","slide":3,"bbox":[80,637,635,1]}
+{"kind":"textbox","id":"sh/18bipgf2","slide":3,"name":"Уровень строчных","text":"Уровень строчных","textPreview":"Уровень строчных","textChars":16,"textLines":1,"bbox":[84,320,380,25]}
+{"kind":"textbox","id":"sh/29kji1gn","slide":3,"name":"Базовая линия","text":"Базовая линия","textPreview":"Базовая линия","textChars":13,"textLines":1,"bbox":[84,651,380,25]}
+{"kind":"textbox","id":"sh/jm5cjylc","slide":3,"name":"Две буквы — один непрерывный ритм.","text":"Две буквы — один непрерывный ритм.","textPreview":"Две буквы — один непрерывный ритм.","textChars":34,"textLines":1,"bbox":[80,779,650,50]}
+{"kind":"image","id":"im/3u5cj2h4","slide":3,"name":"","alt":"monogram-outline.svg","bbox":[154,252,455,392]}
+{"kind":"image","id":"im/yxsbydgf","slide":3,"name":"","alt":"monogram-detail.svg","bbox":[821,129,757,690]}
+{"kind":"notes","id":"nt/qmpr1b","slide":3,"text":"Логотип: предоставленный пользователем Frame 1.png; векторная геометрия из существующих исходников design/logo/2026-09-16. Цвета: navy #152037, gold #E2CA79, ivory #F2F1EB. Разбор формы: исходные векторные кривые, контур и увеличенный фрагмент; референс 16.14.58. Линии показывают уровень строчных букв и базовую линию, не утверждают алгоритм построения."}
+{"kind":"slide","id":"sl/l106xq","slide":4,"title":"ЗНАК В СИСТЕМЕ","textShapes":6}
+{"kind":"textbox","id":"sh/0rix0ne1","slide":4,"name":"ЗНАК В СИСТЕМЕ","text":"ЗНАК В СИСТЕМЕ","textPreview":"ЗНАК В СИСТЕМЕ","textChars":14,"textLines":1,"bbox":[64,54,620,30]}
+{"kind":"shape","id":"sh/fqpwridg","slide":4,"bbox":[64,142,588,478]}
+{"kind":"shape","id":"sh/epgfydwb","slide":4,"bbox":[240,249,236,236]}
+{"kind":"textbox","id":"sh/ovixoned","slide":4,"name":"Иконка приложения","text":"Иконка приложения","textPreview":"Иконка приложения","textChars":17,"textLines":1,"bbox":[66,649,640,45]}
+{"kind":"shape","id":"sh/nu9wvids","slide":4,"bbox":[64,741,184,63]}
+{"kind":"textbox","id":"sh/2t0f2dw7","slide":4,"name":"#152037","text":"#152037","textPreview":"#152037","textChars":7,"textLines":1,"bbox":[64,820,180,28]}
+{"kind":"shape","id":"sh/xkby1cvu","slide":4,"bbox":[263,741,184,63]}
+{"kind":"textbox","id":"sh/cj2xs7e9","slide":4,"name":"#F2F1EB","text":"#F2F1EB","textPreview":"#F2F1EB","textChars":7,"textLines":1,"bbox":[263,820,180,28]}
+{"kind":"shape","id":"sh/21cj694n","slide":4,"bbox":[462,741,184,63]}
+{"kind":"textbox","id":"sh/n2lkzel8","slide":4,"name":"#E2CA79","text":"#E2CA79","textPreview":"#E2CA79","textChars":7,"textLines":1,"bbox":[462,820,180,28]}
+{"kind":"textbox","id":"sh/p4321o3e","slide":4,"name":"Пространство сообщества","text":"Пространство сообщества","textPreview":"Пространство сообщества","textChars":23,"textLines":1,"bbox":[760,816,775,40]}
+{"kind":"image","id":"im/kzixsr61","slide":4,"name":"","alt":"monogram-navy.svg","bbox":[279,292,158,136]}
+{"kind":"image","id":"im/red8jq94","slide":4,"name":"","alt":"editorial-sign.png","bbox":[757,141,779,646]}
+{"kind":"notes","id":"nt/l106xq","slide":4,"text":"Логотип: предоставленный пользователем Frame 1.png; векторная геометрия из существующих исходников design/logo/2026-09-16. Цвета: navy #152037, gold #E2CA79, ivory #F2F1EB. Референс 16.14.51: контраст цифровой и физической поверхности. Носители — концепты для сообщества астрологов."}
+{"kind":"slide","id":"sl/jze5jn","slide":5,"title":"Slide 5","textShapes":0}
+{"kind":"image","id":"im/h0rq10ve","slide":5,"name":"","alt":"editorial-unboxing.png","bbox":[0,0,1600,900]}
+{"kind":"notes","id":"nt/jze5jn","slide":5,"text":"Логотип: предоставленный пользователем Frame 1.png; векторная геометрия из существующих исходников design/logo/2026-09-16. Цвета: navy #152037, gold #E2CA79, ivory #F2F1EB. Фотореалистичный концептуальный мокап, создан встроенным image generation, не фотография изготовленной продукции. Промпт и исходник: assets/image-prompts.md. Новый мокап: набор астролога — папка, натальная карта, ежедневник. Референс 16.15.26 используется для масштаба и взаимодействия рук с предметом."}
+{"kind":"slide","id":"sl/0t3qo3","slide":6,"title":"В деталях.","textShapes":2}
+{"kind":"textbox","id":"sh/g72p4byp","slide":6,"name":"В деталях.","text":"В деталях.","textPreview":"В деталях.","textChars":10,"textLines":1,"bbox":[65,57,725,90]}
+{"kind":"textbox","id":"sh/4v2p8byl","slide":6,"name":"БУМАГА / КАЛЬКА / ТИСНЕНИЕ","text":"БУМАГА / КАЛЬКА / ТИСНЕНИЕ","textPreview":"БУМАГА / КАЛЬКА / ТИСНЕНИЕ","textChars":26,"textLines":1,"bbox":[77,835,760,30]}
+{"kind":"image","id":"im/elc7ih0z","slide":6,"name":"","alt":"editorial-seal.png","bbox":[74,235,830,564]}
+{"kind":"image","id":"im/f6l8bmhk","slide":6,"name":"","alt":"journal.png","bbox":[962,83,574,373]}
+{"kind":"image","id":"im/obepory1","slide":6,"name":"","alt":"stationery.png","bbox":[866,479,670,376]}
+{"kind":"notes","id":"nt/0t3qo3","slide":6,"text":"Логотип: предоставленный пользователем Frame 1.png; векторная геометрия из существующих исходников design/logo/2026-09-16. Цвета: navy #152037, gold #E2CA79, ivory #F2F1EB. Фотореалистичный концептуальный мокап, создан встроенным image generation, не фотография изготовленной продукции. Промпт и исходник: assets/image-prompts.md. Свободный коллаж фактур: референс 16.15.32; материалы консультации, печать и ежедневник."}
+{"kind":"slide","id":"sl/lmqmhf","slide":7,"title":"РИТМ ПРАКТИКИ","textShapes":10}
+{"kind":"textbox","id":"sh/wn6hgfud","slide":7,"name":"РИТМ ПРАКТИКИ","text":"РИТМ ПРАКТИКИ","textPreview":"РИТМ ПРАКТИКИ","textChars":13,"textLines":1,"bbox":[865,59,650,30]}
+{"kind":"shape","id":"sh/x8zi9kvy","slide":7,"bbox":[862,188,676,120]}
+{"kind":"textbox","id":"sh/y98zipcj","slide":7,"name":"14:30","text":"14:30","textPreview":"14:30","textChars":5,"textLines":1,"bbox":[899,216,185,75]}
+{"kind":"textbox","id":"sh/jah0bud4","slide":7,"name":"Консультация\nНатальная карта","text":"Консультация\nНатальная карта","textPreview":"Консультация | Натальная карта","textChars":28,"textLines":2,"bbox":[1100,218,385,67]}
+{"kind":"shape","id":"sh/kbqhkzup","slide":7,"bbox":[862,362,676,318]}
+{"kind":"textbox","id":"sh/lczid4va","slide":7,"name":"ПОДГОТОВКА К ВСТРЕЧЕ","text":"ПОДГОТОВКА К ВСТРЕЧЕ","textPreview":"ПОДГОТОВКА К ВСТРЕЧЕ","textChars":20,"textLines":1,"bbox":[899,396,570,29]}
+{"kind":"shape","id":"sh/6d8zmpcv","slide":7,"bbox":[902,476,194,4]}
+{"kind":"shape","id":"sh/7eh0fud0","slide":7,"bbox":[1110,476,194,4]}
+{"kind":"shape","id":"sh/fa5436l8","slide":7,"bbox":[1318,476,180,4]}
+{"kind":"textbox","id":"sh/epwna14n","slide":7,"name":"Запись","text":"Запись","textPreview":"Запись","textChars":6,"textLines":1,"bbox":[899,506,195,40]}
+{"kind":"textbox","id":"sh/1cnm5w3e","slide":7,"name":"Карта","text":"Карта","textPreview":"Карта","textChars":5,"textLines":1,"bbox":[1110,506,194,40]}
+{"kind":"textbox","id":"sh/0be5crmt","slide":7,"name":"Встреча","text":"Встреча","textPreview":"Встреча","textChars":7,"textLines":1,"bbox":[1318,506,195,40]}
+{"kind":"textbox","id":"sh/rml4zmlw","slide":7,"name":"Всё готово к разговору.","text":"Всё готово к разговору.","textPreview":"Всё готово к разговору.","textChars":23,"textLines":1,"bbox":[899,590,580,45]}
+{"kind":"textbox","id":"sh/6lc36h4r","slide":7,"name":"Забота начинается\nдо консультации.","text":"Забота начинается\nдо консультации.","textPreview":"Забота начинается | до консультации.","textChars":34,"textLines":2,"bbox":[865,745,655,102]}
+{"kind":"textbox","id":"sh/donm1w32","slide":7,"name":"КОНЦЕПЦИЯ ИНТЕРФЕЙСА","text":"КОНЦЕПЦИЯ ИНТЕРФЕЙСА","textPreview":"КОНЦЕПЦИЯ ИНТЕРФЕЙСА","textChars":20,"textLines":1,"bbox":[866,868,650,22]}
+{"kind":"image","id":"im/a5crqx4z","slide":7,"name":"","alt":"editorial-watch.png","bbox":[0,0,800,900]}
+{"kind":"notes","id":"nt/lmqmhf","slide":7,"text":"Логотип: предоставленный пользователем Frame 1.png; векторная геометрия из существующих исходников design/logo/2026-09-16. Цвета: navy #152037, gold #E2CA79, ivory #F2F1EB. Фотореалистичный концептуальный мокап, создан встроенным image generation, не фотография изготовленной продукции. Промпт и исходник: assets/image-prompts.md. Референс 16.15.43: предметный кадр часов рядом с интерфейсными деталями. Экран часов и интерфейсные карточки — концепция применения айдентики, не заявление о текущем функционале продукта."}
+{"kind":"slide","id":"sl/5q1fcf","slide":8,"title":"ПРОДУКТ","textShapes":4}
+{"kind":"textbox","id":"sh/6t8fe18j","slide":8,"name":"ПРОДУКТ","text":"ПРОДУКТ","textPreview":"ПРОДУКТ","textChars":7,"textLines":1,"bbox":[64,53,600,30]}
+{"kind":"textbox","id":"sh/twje9wra","slide":8,"name":"Вся практика.\nОдин кабинет.","text":"Вся практика.\nОдин кабинет.","textPreview":"Вся практика. | Один кабинет.","textChars":27,"textLines":2,"bbox":[64,197,565,180]}
+{"kind":"textbox","id":"sh/8vaxgrqp","slide":8,"name":"Клиенты, консультации,\nматериалы и ","text":"Клиенты, консультации,\nматериалы и расписание —\nв одном пространстве.","textPreview":"Клиенты, консультации, | материалы и расписание — | в одном пространстве.","textChars":69,"textLines":3,"bbox":[69,441,545,124]}
+{"kind":"textbox","id":"sh/lsze5wre","slide":8,"name":"Больше времени на людей.","text":"Больше времени на людей.","textPreview":"Больше времени на людей.","textChars":24,"textLines":1,"bbox":[665,793,850,54]}
+{"kind":"image","id":"im/a1g36p47","slide":8,"name":"","alt":"monogram-navy.svg","bbox":[73,658,122,105]}
+{"kind":"image","id":"im/v2pkzu5s","slide":8,"name":"","alt":"workspace.png","bbox":[662,141,874,617]}
+{"kind":"notes","id":"nt/5q1fcf","slide":8,"text":"Продуктовая идея единого кабинета: https://elevenhouse.ai. Изображение рабочего места — концептуальный мокап по реальному интерфейсу календаря, с обобщёнными данными."}
+{"kind":"slide","id":"sl/5go0n3","slide":9,"title":"СВОЙ ДОМ","textShapes":3}
+{"kind":"textbox","id":"sh/yxo3a1wz","slide":9,"name":"СВОЙ ДОМ","text":"СВОЙ ДОМ","textPreview":"СВОЙ ДОМ","textChars":8,"textLines":1,"bbox":[58,60,340,30]}
+{"kind":"textbox","id":"sh/lkzmlwfa","slide":9,"name":"Место\nдля своих.","text":"Место\nдля своих.","textPreview":"Место | для своих.","textChars":16,"textLines":2,"bbox":[56,289,345,155]}
+{"kind":"textbox","id":"sh/kjqlcrep","slide":9,"name":"Встречи.\nКонсультации.\nСообщество.","text":"Встречи.\nКонсультации.\nСообщество.","textPreview":"Встречи. | Консультации. | Сообщество.","textChars":34,"textLines":3,"bbox":[60,532,320,130]}
+{"kind":"image","id":"im/upkzyhof","slide":9,"name":"","alt":"monogram-gold.svg","bbox":[62,724,95,82]}
+{"kind":"image","id":"im/vqtg7mp0","slide":9,"name":"","alt":"editorial-sign.png","bbox":[421,0,1179,900]}
+{"kind":"notes","id":"nt/5go0n3","slide":9,"text":"Логотип: предоставленный пользователем Frame 1.png; векторная геометрия из существующих исходников design/logo/2026-09-16. Цвета: navy #152037, gold #E2CA79, ivory #F2F1EB. Фотореалистичный концептуальный мокап, создан встроенным image generation, не фотография изготовленной продукции. Промпт и исходник: assets/image-prompts.md. Референс 16.15.47: небольшая перпендикулярная вывеска в реальной городской среде. Здесь — концепт входа в пространство астрологов, не существующий адрес."}
+{"kind":"slide","id":"sl/1wgqk9","slide":10,"title":"ЛЮДИ / СВЯЗИ / ПРАКТИКА","textShapes":3}
+{"kind":"textbox","id":"sh/218ze18z","slide":10,"name":"ЛЮДИ / СВЯЗИ / ПРАКТИКА","text":"ЛЮДИ / СВЯЗИ / ПРАКТИКА","textPreview":"ЛЮДИ / СВЯЗИ / ПРАКТИКА","textChars":23,"textLines":1,"bbox":[64,55,1090,30]}
+{"kind":"textbox","id":"sh/bq1gr6pg","slide":10,"name":"elevenhouse.ai","text":"elevenhouse.ai","textPreview":"elevenhouse.ai","textChars":14,"textLines":1,"bbox":[87,834,810,39]}
+{"kind":"textbox","id":"sh/qpszi18v","slide":10,"name":"АЙДЕНТИКА / 2026","text":"АЙДЕНТИКА / 2026","textPreview":"АЙДЕНТИКА / 2026","textChars":16,"textLines":1,"bbox":[1300,848,270,28]}
+{"kind":"image","id":"im/ojul8bix","slide":10,"name":"","alt":"wordmark-ivory.svg","bbox":[84,183,956,569]}
+{"kind":"image","id":"im/pk321gji","slide":10,"name":"","alt":"monogram-gold.svg","bbox":[1238,557,266,229]}
+{"kind":"notes","id":"nt/1wgqk9","slide":10,"text":"Логотип: предоставленный пользователем Frame 1.png; векторная геометрия из существующих исходников design/logo/2026-09-16. Цвета: navy #152037, gold #E2CA79, ivory #F2F1EB. Завершающий кадр в фирменной палитре. Айдентика сохраняет пользовательский логотип; меняются способы применения и презентационная композиция."}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" role="img" aria-label="h — прежняя форма слева, новая справа"><title>h — прежняя форма слева, новая справа</title>
+<path fill="#010308" fill-rule="evenodd" transform="translate(0 0) scale(1)" d="M0 0 H1000 V640 H0 Z"/>
+<path fill="#F2F1EB" fill-rule="evenodd" transform="translate(140 100) scale(1.2)" d="M0 0 H36 V153 C56 115 87 84 120 84 C165 84 187 117 187 168 V318 H151 V174 C151 137 137 119 112 119 C74 119 36 157 36 204 V318 H0 Z"/>
+<path fill="#E2CA79" fill-rule="evenodd" transform="translate(595 100) scale(1.2)" d="M30 0 H66 C66 49 61 97 48 143 C79 106 107 84 137 84 C181 84 206 111 202 156 C199 188 185 220 175 249 C166 275 164 290 178 298 C186 303 197 302 206 298 L218 326 C198 337 176 335 158 322 C132 304 138 274 147 247 L165 194 C174 168 179 145 168 131 C159 118 146 116 132 120 C89 132 74 169 47 207 C38 234 35 268 36 318 H0 C0 259 7 213 18 173 C28 132 36 72 30 0 Z"/>
+</svg>
