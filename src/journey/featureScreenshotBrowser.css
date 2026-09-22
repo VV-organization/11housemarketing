@@ -2,7 +2,7 @@
    All styles are local. Existing cosmic canvas, section heading and tokens stay intact. */
 .eh-journey .eh-feature-browser { width: min(1240px, 100%); }
 .eh-journey .eh-feature-browser__tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 0 32px; }
-.eh-journey .eh-feature-browser__tab { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 17px; border: 1px solid var(--eh-line); border-radius: var(--eh-control-radius); background: rgba(3, 9, 23, .88); color: var(--eh-muted); font: 500 14px/1.4 'Manrope', sans-serif; cursor: pointer; transition: color .18s, border-color .18s, background .18s; }
+.eh-journey .eh-feature-browser__tab { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 17px; border: 1px solid var(--eh-line); border-radius: 999px; background: rgba(3, 9, 23, .88); color: var(--eh-muted); font: 500 14px/1.4 'Manrope', sans-serif; cursor: pointer; transition: color .18s, border-color .18s, background .18s; }
 .eh-journey .eh-feature-browser__tab img { flex: 0 0 auto; }
 .eh-journey .eh-feature-browser__tab:hover { color: var(--eh-ink); border-color: rgba(226, 202, 121, .5); background: #101b2e; }
 .eh-journey .eh-feature-browser__tab[aria-selected="true"] { color: #f5e6bd; border-color: #e2ca79b8; background: #24241f; }
@@ -26,7 +26,7 @@
 .eh-journey .eh-feature-browser__dialog-content { padding: 18px; }
 .eh-journey .eh-feature-browser__dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
 .eh-journey .eh-feature-browser__dialog-heading h3 { margin: 0; font: 500 16px/1.5 'Manrope', sans-serif; }
-.eh-journey .eh-feature-browser__dialog-heading button { display: flex; align-items: center; gap: 12px; flex-shrink: 0; min-height: 44px; border: 1px solid var(--eh-line); border-radius: 10px; padding: 8px 14px; font: inherit; font-size: 13px; color: var(--eh-accent); background: #101b2e; cursor: pointer; }
+.eh-journey .eh-feature-browser__dialog-heading button { display: flex; align-items: center; gap: 12px; flex-shrink: 0; min-height: 44px; border: 1px solid var(--eh-line); border-radius: 999px; padding: 8px 14px; font: inherit; font-size: 13px; color: var(--eh-accent); background: #101b2e; cursor: pointer; }
 .eh-journey .eh-feature-browser__dialog-heading button span { font-size: 24px; }
 .eh-journey .eh-feature-browser__zoom-scroll { overflow: auto; overscroll-behavior: contain; max-height: calc(100dvh - 210px); border-radius: 9px; }
 .eh-journey .eh-feature-browser__zoom-scroll img { display: block; width: 100%; min-width: 1000px; height: auto; aspect-ratio: auto; object-fit: contain; }

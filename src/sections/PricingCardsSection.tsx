@@ -17,7 +17,7 @@ export function PricingCardsSection() {
         <p className="eh-pricing-cards__audience">{plan.audience}</p>
         <p className="eh-pricing-cards__price"><strong>{plan.price}</strong><span>/ {plan.period}</span></p>
         <p className="eh-pricing-cards__commission">{plan.commissionLabel} — <strong>{plan.commission}</strong></p>
-        <a className="eh-pricing-cards__action" href={pricingRegistrationUrl}>{pricingActionLabel(plan)}<span aria-hidden="true">↗</span></a>
+        <a className="eh-pricing-cards__action" href={pricingRegistrationUrl}>{pricingActionLabel(plan)}</a>
         <p className="eh-pricing-cards__includes">{plan.includesLabel}</p>
         <ul>{plan.cardPoints.map(point => <li key={point}>{point}</li>)}</ul>
         <footer><p>{plan.capacityDetail}</p><p>{plan.note}</p></footer>

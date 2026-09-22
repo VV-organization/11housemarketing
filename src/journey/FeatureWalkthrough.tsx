@@ -94,7 +94,7 @@ export function FeatureWalkthrough({ feature, reducedMotion, onExplore }: { feat
           {frame.done && <p className="eh-walkthrough__outcome" role="status">{story.outcome}</p>}
         </div>
         <div className="eh-walkthrough__footer">
-          <button type="button" className="eh-experience__another" onClick={onExplore}>Посмотреть другую возможность <Icon.arrowUR size={20} /></button>
+          <button type="button" className="eh-experience__another" onClick={onExplore}>Посмотреть другую возможность</button>
         </div>
       </div>
     </div>

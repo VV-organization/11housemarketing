@@ -90,7 +90,7 @@ export function OneClientStory() {
         </div>
       </div>
 
-      <footer className="eh-workflow-shift__closing"><p data-reveal>Не ещё один сервис.</p><div data-reveal><a href="https://app.elevenhouse.ai/auth?mode=register">Попробовать бесплатно <Icon.arrowUR size={19} /></a></div></footer>
+      <footer className="eh-workflow-shift__closing"><p data-reveal>Не ещё один сервис.</p><div data-reveal><a href="https://app.elevenhouse.ai/auth?mode=register">Попробовать бесплатно</a></div></footer>
     </div>
   </section>
 }
