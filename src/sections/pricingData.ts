@@ -116,5 +116,5 @@ export const pricingPlans: PricingPlan[] = [
   }
 ]
 
-export const pricingActionLabel = (plan: PricingPlan) => plan.key === 'start' ? 'Начать бесплатно' : 'Начать с бесплатного'
+export const pricingActionLabel = (_plan: PricingPlan) => 'Начать бесплатно'
 export const pricingRegistrationUrl = 'https://app.elevenhouse.ai/auth?mode=register'

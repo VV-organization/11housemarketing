@@ -19,7 +19,7 @@ export function PricingCardsSection() {
         <p className="eh-pricing-cards__commission">{plan.commissionLabel} — <strong>{plan.commission}</strong></p>
         <a className="eh-pricing-cards__action" href={pricingRegistrationUrl}>{pricingActionLabel(plan)}</a>
         <p className="eh-pricing-cards__includes">{plan.includesLabel}</p>
-        <ul>{plan.cardPoints.map(point => <li key={point}>{point}</li>)}</ul>
+        <ul>{plan.cardPoints.filter(point => point !== 'Всё из Start' && point !== 'Всё из Team Pro').map(point => <li key={point}>{point}</li>)}</ul>
         <footer><p>{plan.capacityDetail}</p><p>{plan.note}</p></footer>
       </article>)}
     </div>
