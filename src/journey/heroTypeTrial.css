@@ -2,41 +2,64 @@
    Reference: original Vetrino typography with selective optical blur, luminous disc CTA.
    No canvas, background, header, scroll timing or other section selectors. */
 .eh-journey .eh-hero-type-trial .eh-journey__split-title :is(.eh-journey__split-start, .eh-journey__split-end) { overflow: visible; }
-.eh-journey .eh-hero-type-trial .eh-type-soft {
-  display: inline-block;
-  filter: blur(2.1px);
-  opacity: .85;
-  text-shadow: 5px 0 10px #dfe8ff40;
-  transition: filter .6s, opacity .6s;
+/* Complementary focus masks share the exact same glyph origin and baseline. */
+.eh-journey .eh-hero-type-trial .eh-optical-letter {
+  position: relative; display: inline-block; vertical-align: baseline;
 }
-.eh-journey .eh-hero-type-trial h1:hover .eh-type-soft { filter: blur(0); opacity: 1; }
+.eh-journey .eh-hero-type-trial .eh-optical-letter__base {
+  display: block;
+  -webkit-mask-image: var(--focus-mask);
+  mask-image: var(--focus-mask);
+}
+.eh-journey .eh-hero-type-trial .eh-optical-letter__echo {
+  position: absolute; inset: 0; display: block; pointer-events: none;
+  filter: blur(.035em);
+  -webkit-mask-image: var(--blur-mask);
+  mask-image: var(--blur-mask);
+}
+.eh-journey .eh-hero-type-trial .eh-optical-letter--head {
+  --focus-mask: linear-gradient(#0002 8%, #000 35%);
+  --blur-mask: linear-gradient(#000 8%, transparent 35%);
+}
+.eh-journey .eh-hero-type-trial .eh-optical-letter--bend {
+  --focus-mask: linear-gradient(150deg, #000 48%, transparent 90%);
+  --blur-mask: linear-gradient(150deg, transparent 48%, #000 90%);
+}
+.eh-journey .eh-hero-type-trial .eh-optical-letter--tail {
+  --focus-mask: linear-gradient(100deg, #000 20%, transparent 80%);
+  --blur-mask: linear-gradient(100deg, transparent 20%, #000 80%);
+}
 .eh-journey .eh-hero-type-trial .eh-journey__start {
   width: clamp(128px, 12vw, 178px); height: clamp(128px, 12vw, 178px);
   min-width: 0; min-height: 0; padding: 22px;
-  border: 1px solid rgba(226, 202, 121, .38); border-radius: 50%;
-  border-right-color: transparent; border-bottom-color: transparent;
+  border: 0; border-radius: 50%;
   isolation: isolate; overflow: visible;
-  background: rgba(5, 7, 14, .78); color: #f5e6bd;
+  background: rgba(5, 7, 14, .78);
+  color: #fff9e9;
   font-size: 11px; line-height: 1.4; letter-spacing: -.015em;
-  box-shadow: none;
+  box-shadow: -7px 12px 20px -9px rgba(0, 0, 0, .75);
   transition: background .35s, scale .35s;
 }
 .eh-journey .eh-hero-type-trial .eh-journey__start:hover {
-  background: rgba(226, 202, 121, .16); scale: 1.045;
+  background: rgba(226, 202, 121, .16);
+  scale: 1.045;
 }
-/* The reference has an optically defocused rim, not a separate luminous ring.
-   Blur is applied inside the SVG after the crescent is drawn, preserving its soft falloff. */
+/* A second luminous disc sits behind the face; their intersections form tapered tips. */
 .eh-journey .eh-hero-type-trial .eh-journey__start::before {
-  content: ''; position: absolute; inset: -14%; pointer-events: none; z-index: -1;
+  content: ''; position: absolute; inset: -46%; pointer-events: none; z-index: -1;
   background: url('../assets/hero-button-trail.svg') center / 100% 100% no-repeat;
+  /* Blur outside the SVG viewport: WebKit must not clip the glow's filter surface. */
+  filter: blur(3.6px);
+  overflow: visible;
 }
 .eh-journey .eh-hero-type-trial .eh-journey__start::after {
-  content: ''; position: absolute; inset: -1px; pointer-events: none; z-index: -1;
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: -1;
   border-radius: 50%;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  -webkit-mask: linear-gradient(135deg, transparent 28%, #000 78%);
-  mask: linear-gradient(135deg, transparent 28%, #000 78%);
+  /* Explicit circular clipping keeps WebKit backdrop sampling off the rectangular layer edges. */
+  clip-path: circle(50%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
 }
 .eh-journey .eh-hero-type-trial .eh-journey__start:focus-visible { outline: 2px solid #e4ce87; outline-offset: 8px; }
 @media (min-width:701px) and (max-height:760px) {
@@ -44,9 +67,8 @@
 }
 @media (max-width:700px) {
   .eh-journey .eh-hero-type-trial .eh-journey__start { width: 106px; height: 106px; font-size: 10px; padding: 15px; top: 43%; }
-  .eh-journey .eh-hero-type-trial .eh-type-soft { filter: blur(1px); }
 }
 @media (prefers-reduced-motion:reduce) {
-  .eh-journey .eh-hero-type-trial :is(.eh-type-soft, .eh-journey__start) { transition: none; }
+  .eh-journey .eh-hero-type-trial .eh-journey__start { transition: none; }
 }
-.eh-journey[data-motion="reduced"] .eh-hero-type-trial :is(.eh-type-soft, .eh-journey__start) { transition: none; }
+.eh-journey[data-motion="reduced"] .eh-hero-type-trial .eh-journey__start { transition: none; }

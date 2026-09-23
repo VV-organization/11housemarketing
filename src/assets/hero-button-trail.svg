@@ -1,16 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-60 -60 360 360" fill="none">
   <defs>
-    <linearGradient id="light" x1="185" y1="34" x2="121" y2="224" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f1d569" stop-opacity="0"/>
-      <stop offset=".2" stop-color="#f5d568" stop-opacity=".8"/>
-      <stop offset=".43" stop-color="#ffe39a"/>
-      <stop offset=".67" stop-color="#eef5ff"/>
-      <stop offset=".86" stop-color="#d9eaff" stop-opacity=".74"/>
-      <stop offset="1" stop-color="#bddbfa" stop-opacity="0"/>
+    <linearGradient id="light" x1="195" y1="48" x2="120" y2="221" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#efd264"/>
+      <stop offset=".38" stop-color="#ffe5a1"/>
+      <stop offset=".7" stop-color="#f5f5ff"/>
+      <stop offset="1" stop-color="#bcdcff"/>
     </linearGradient>
-    <filter id="haze" x="0" y="0" width="240" height="240" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="6.5"/></filter>
-    <filter id="edge" x="0" y="0" width="240" height="240" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="2.8"/></filter>
+    <!-- Two equal discs offset diagonally: their intersections form the tapered ends. -->
+    <mask id="outside" maskUnits="userSpaceOnUse" x="-60" y="-60" width="360" height="360"><rect x="-60" y="-60" width="360" height="360" fill="white"/><circle cx="120" cy="120" r="93.75" fill="black"/></mask>
   </defs>
-  <path d="M168 39 A94 94 0 0 1 65 197" transform="translate(4 4)" stroke="url(#light)" stroke-width="13" stroke-linecap="round" opacity=".6" filter="url(#haze)"/>
-  <path d="M168 39 A94 94 0 0 1 65 197" transform="translate(2 2)" stroke="url(#light)" stroke-width="5" stroke-linecap="round" opacity=".95" filter="url(#edge)"/>
+  <g mask="url(#outside)">
+    <circle cx="125" cy="125" r="94" fill="url(#light)" opacity=".4"/>
+    <circle cx="125" cy="125" r="94" fill="url(#light)" opacity=".7"/>
+  </g>
 </svg>

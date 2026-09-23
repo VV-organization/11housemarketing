@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import hand from '../assets/finale/hand-gold-navy-card.png'
+import hand from '../assets/finale/hand-white-lace-approved.png'
 
 export function FinaleHand({ reducedMotion }: { reducedMotion: boolean }) {
   const ref = useRef<HTMLDivElement>(null)

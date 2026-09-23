@@ -1,20 +1,19 @@
-/* Reference Group 8: edge-lit blue surfaces and fine gold trajectories.
-   Decorative layer is limited to the empty perimeter; no extra motion or text. */
+/* Group 8 reference: soft blue edge lighting and a diffused light source.
+   Only the decorative background changes; content remains above this layer. */
 .eh-journey .eh-pricing-cards__card .eh-price-atmosphere {
   position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none;
-  background: radial-gradient(ellipse at 100% 0%, #80b5e51a, transparent 38%), radial-gradient(ellipse at 100% 100%, #7a9bc014, transparent 29%);
+  background:
+    radial-gradient(ellipse 55% 48% at 110% 12%, #76b9e524, transparent 78%),
+    radial-gradient(ellipse 70% 26% at 85% 108%, #4a9bd326, transparent 78%);
+}
+.eh-journey .eh-price-atmosphere::before {
+  content: ''; position: absolute; width: 64%; height: 72%; right: -38%; top: -20%;
+  background: conic-gradient(from 140deg at 50% 48%, transparent 0deg, #88c9f133 24deg, #d5efff42 30deg, #619dcd26 39deg, transparent 66deg);
+  filter: blur(24px); pointer-events: none;
 }
 .eh-journey .eh-pricing-cards__card[data-plan="pro"] .eh-price-atmosphere {
-  background: radial-gradient(ellipse at 100% 0%, #e6cb7a15, transparent 38%), radial-gradient(ellipse at 100% 100%, #d2ad5414, transparent 29%);
+  background:
+    radial-gradient(ellipse 55% 48% at 110% 12%, #86c0e52b, transparent 78%),
+    radial-gradient(ellipse 70% 26% at 85% 108%, #5fa5d52b, transparent 78%);
 }
-.eh-journey .eh-price-atmosphere svg {
-  position: absolute; bottom: 0; right: 0; width: 100%; height: 115px;
-  fill: none; stroke: #9ebfe7; stroke-width: .65; opacity: .22;
-  mask-image: linear-gradient(90deg, transparent 38%, #000 100%);
-}
-.eh-journey .eh-price-atmosphere circle { fill: #e7d18f; stroke: none; }
-.eh-journey .eh-pricing-cards__card[data-plan="pro"] .eh-price-atmosphere svg { stroke: #e5c775; opacity: .28; }
 .eh-journey .eh-pricing-cards__card > :not(.eh-price-atmosphere) { position: relative; }
-@media (max-width: 800px) {
-  .eh-journey .eh-price-atmosphere svg { height: 90px; opacity: .18; }
-}

@@ -34,9 +34,7 @@
 .eh-journey .eh-finale-hand-art[data-visible="true"] { opacity: 1; transform: none; }
 .eh-journey .eh-finale-hand-art img {
   display: block; width: 100%; height: 100%; object-fit: contain;
-  -webkit-mask-image: url('../assets/finale/hand-mask.png');
-  mask-image: url('../assets/finale/hand-mask.png');
-  mask-mode: alpha; mask-size: 100% 100%; mask-repeat: no-repeat;
+  /* Use the supplied PNG alpha without an additional silhouette mask. */
 }
 .eh-journey .eh-finale-hand-trial .eh-finale-footer {
   position: relative; inset: auto; grid-column: 1 / -1; grid-row: 2;
