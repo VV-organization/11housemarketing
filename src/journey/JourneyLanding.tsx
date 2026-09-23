@@ -151,7 +151,7 @@ export function JourneyLanding() {
         <section id="top" tabIndex={-1} className="eh-journey__opening eh-hero-type-trial" ref={introRef} aria-labelledby="journey-title">
           <div className="eh-journey__opening-stage">
             <h1 id="journey-title" className="eh-journey__split-title">
-              <span className="eh-journey__split-start"><span>Вся практи<span className="eh-type-soft">ка</span><br /><em className="eh-type-italic">астролога</em></span></span>
+              <span className="eh-journey__split-start"><span>Вся практи<span className="eh-type-soft">ка</span><br />астролога</span></span>
               <span className="eh-journey__split-end"><span>в одном<br />приложен<span className="eh-type-soft">ии</span></span></span>
             </h1>
             <a className="eh-journey__start" href="https://app.elevenhouse.ai/auth?mode=register">
