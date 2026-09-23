@@ -26,7 +26,6 @@
 .eh-journey .eh-workflow-shift__fragment > span:nth-child(2) { flex: 1; }
 .eh-journey .eh-workflow-shift__fragment strong { display: block; font-size: 15px; font-weight: 500; color: #d6dbe5; line-height: 1.45; }
 .eh-journey .eh-workflow-shift__fragment small { display: block; margin-top: 7px; font-size: 12px; line-height: 1.55; }
-.eh-journey .eh-workflow-shift__disconnect { font-size: 20px; font-weight: 300; color: #7f8da2; }
 .eh-journey .eh-workflow-shift__fragment[aria-pressed="true"] { transform: rotate(0deg) translateX(3px); border-color: #e2ca7980; background: #101b2ef5; }
 .eh-journey .eh-workflow-shift :is(button, a):focus-visible { outline: 2px solid var(--eh-accent); outline-offset: 5px; }
 .eh-journey .eh-workflow-shift__bridge { position: relative; margin-top: 130px; margin-bottom: 36px; }

@@ -63,7 +63,7 @@ export function OneClientStory() {
             {comparisonRows.map((row, index) => {
               const RowIcon = Icon[row.icon]
               return <button key={row.manual} type="button" className="eh-workflow-shift__fragment" data-reveal aria-pressed={active === index} aria-controls={`eh-workflow-result-${index}`} style={{ '--row': index } as CSSProperties} onClick={() => setActive(index)} onFocus={() => setActive(index)} onPointerEnter={(event) => { if (event.pointerType === 'mouse') setActive(index) }}>
-                <RowIcon size={23} /><span><strong>{row.manual}</strong><small>{row.friction}</small></span><span className="eh-workflow-shift__disconnect" aria-hidden="true">×</span>
+                <RowIcon size={23} /><span><strong>{row.manual}</strong><small>{row.friction}</small></span>
               </button>
             })}
           </div>
