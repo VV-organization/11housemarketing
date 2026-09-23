@@ -26,15 +26,30 @@
 .eh-journey .eh-hero-type-trial .eh-journey__start {
   width: clamp(128px, 12vw, 178px); height: clamp(128px, 12vw, 178px);
   min-width: 0; min-height: 0; padding: 22px;
-  border: 1px solid #fff9e8; border-radius: 50%;
-  background: #f5f3ec; color: #111c2f;
+  border: 1px solid rgba(226, 202, 121, .38); border-radius: 50%;
+  border-right-color: transparent; border-bottom-color: transparent;
+  isolation: isolate; overflow: visible;
+  background: rgba(5, 7, 14, .78); color: #f5e6bd;
   font-size: 11px; line-height: 1.4; letter-spacing: -.015em;
-  box-shadow: 8px 5px 13px -4px #e9ca83, -5px 9px 21px -9px #c9ddff;
-  transition: box-shadow .35s, background .35s, scale .35s;
+  box-shadow: none;
+  transition: background .35s, scale .35s;
 }
 .eh-journey .eh-hero-type-trial .eh-journey__start:hover {
-  background: #fffaf0; scale: 1.045;
-  box-shadow: 10px 6px 23px -4px #e9ca83, -7px 10px 26px -7px #c9ddff;
+  background: rgba(226, 202, 121, .16); scale: 1.045;
+}
+/* The reference has an optically defocused rim, not a separate luminous ring.
+   Blur is applied inside the SVG after the crescent is drawn, preserving its soft falloff. */
+.eh-journey .eh-hero-type-trial .eh-journey__start::before {
+  content: ''; position: absolute; inset: -14%; pointer-events: none; z-index: -1;
+  background: url('../assets/hero-button-trail.svg') center / 100% 100% no-repeat;
+}
+.eh-journey .eh-hero-type-trial .eh-journey__start::after {
+  content: ''; position: absolute; inset: -1px; pointer-events: none; z-index: -1;
+  border-radius: 50%;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  -webkit-mask: linear-gradient(135deg, transparent 28%, #000 78%);
+  mask: linear-gradient(135deg, transparent 28%, #000 78%);
 }
 .eh-journey .eh-hero-type-trial .eh-journey__start:focus-visible { outline: 2px solid #e4ce87; outline-offset: 8px; }
 @media (min-width:701px) and (max-height:760px) {
