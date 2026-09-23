@@ -1,0 +1,110 @@
+/* Local reversible experiment. Every rule is scoped to this finale variant. */
+.eh-journey .eh-finale-hand-trial .eh-journey__finale-stage {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px 0;
+  padding: 112px 4vw 20px;
+  min-height: 700px;
+  overflow: hidden;
+}
+.eh-journey .eh-finale-hand-copy { position: relative; z-index: 2; grid-column: 1; grid-row: 1; }
+.eh-journey .eh-finale-hand-trial :is(.eh-journey__split-start, .eh-journey__split-end) {
+  position: static;
+  max-width: none;
+  font-size: clamp(42px, 5vw, 82px);
+  line-height: 1.08;
+  text-align: left;
+}
+.eh-journey .eh-finale-hand-trial .eh-journey__split-end { margin-top: 16px; color: #e2ca79; }
+.eh-journey .eh-finale-hand-trial .eh-journey__split-title > span > span { transform: none; opacity: 1; }
+.eh-journey .eh-finale-hand-trial .eh-journey__finale-action {
+  position: static; transform: none; text-align: left; margin-top: 32px;
+}
+.eh-journey .eh-finale-hand-art {
+  grid-column: 2; grid-row: 1; align-self: end; justify-self: center;
+  height: min(720px, calc(100svh - 235px));
+  aspect-ratio: 2 / 3;
+  max-width: 100%;
+  opacity: 0; transform: translateY(36px);
+  transition: opacity 1.2s ease, transform 1.4s cubic-bezier(.2,.65,.25,1);
+  pointer-events: none;
+}
+.eh-journey .eh-finale-hand-art[data-visible="true"] { opacity: 1; transform: none; }
+.eh-journey .eh-finale-hand-art img {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+  -webkit-mask-image: url('../assets/finale/hand-mask.png');
+  mask-image: url('../assets/finale/hand-mask.png');
+  mask-mode: alpha; mask-size: 100% 100%; mask-repeat: no-repeat;
+}
+.eh-journey .eh-finale-hand-trial .eh-finale-footer {
+  position: relative; inset: auto; grid-column: 1 / -1; grid-row: 2;
+  z-index: 3; width: 100%; background: #030a1690;
+}
+@media (max-width: 760px) {
+  .eh-journey .eh-finale-hand-trial { height: auto; }
+  .eh-journey .eh-finale-hand-trial .eh-journey__finale-stage {
+    position: relative; height: auto; min-height: 0;
+    grid-template-columns: 1fr; grid-template-rows: auto auto auto;
+    padding: 112px 24px 24px; gap: 24px;
+  }
+  .eh-journey .eh-finale-hand-trial :is(.eh-journey__split-start, .eh-journey__split-end) { font-size: clamp(36px, 8.5vw, 58px); }
+  .eh-journey .eh-finale-hand-trial .eh-journey__finale-action { margin-top: 24px; }
+  .eh-journey .eh-finale-hand-art { grid-column: 1; grid-row: 2; height: auto; width: min(100%, 350px); }
+  .eh-journey .eh-finale-hand-trial .eh-finale-footer { grid-row: 3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eh-journey .eh-finale-hand-art { transition: none; opacity: 1; transform: none; }
+}
+.eh-journey[data-motion="reduced"] .eh-finale-hand-art { transition: none; opacity: 1; transform: none; }
+.eh-journey .eh-finale-hand-trial .eh-journey__split-title {
+  font-family: 'EH Vetrino', 'Manrope', sans-serif;
+  font-weight: 400;
+}
+.eh-journey .eh-finale-hand-art {
+  position: relative;
+  bottom: -36px;
+  z-index: 1;
+}
+
+/* The sleeve continues behind the footer panel instead of fading in mid-air. */
+.eh-journey .eh-finale-hand-trial .eh-finale-footer { background: #030a16; }
+@media (max-width: 760px) {
+  .eh-journey .eh-finale-hand-art { bottom: -48px; }
+}
+
+/* Footer content sits inside the panel on three consistent column axes. */
+.eh-journey .eh-finale-hand-trial .eh-finale-footer {
+  padding: 22px 32px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .8fr) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: start;
+  gap: 8px 36px;
+}
+.eh-journey .eh-finale-hand-trial .eh-finale-footer__copyright { grid-column: 1; grid-row: 1; }
+.eh-journey .eh-finale-hand-trial .eh-finale-footer__contacts {
+  grid-column: 2; grid-row: 1 / 3;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+}
+.eh-journey .eh-finale-hand-trial .eh-finale-footer__documents {
+  grid-column: 3; grid-row: 1 / 3;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+}
+.eh-journey .eh-finale-hand-trial .eh-finale-footer__top {
+  grid-column: 1; grid-row: 2; justify-self: start;
+}
+.eh-journey .eh-finale-hand-trial .eh-finale-footer :is(a, button) { min-height: 24px; }
+.eh-journey .eh-finale-hand-trial .eh-finale-footer__documents > span { line-height: 1.6; }
+@media (max-width: 760px) {
+  .eh-journey .eh-finale-hand-trial .eh-finale-footer {
+    padding: 24px;
+    grid-template-columns: minmax(0, 1fr); grid-template-rows: auto;
+    gap: 18px;
+  }
+  .eh-journey .eh-finale-hand-trial .eh-finale-footer__copyright { grid-column: 1; grid-row: 1; }
+  .eh-journey .eh-finale-hand-trial .eh-finale-footer__contacts { grid-column: 1; grid-row: 2; }
+  .eh-journey .eh-finale-hand-trial .eh-finale-footer__documents { grid-column: 1; grid-row: 3; }
+  .eh-journey .eh-finale-hand-trial .eh-finale-footer__top { grid-column: 1; grid-row: 4; }
+  .eh-journey .eh-finale-hand-trial .eh-finale-footer :is(a, button) { min-height: 32px; }
+}

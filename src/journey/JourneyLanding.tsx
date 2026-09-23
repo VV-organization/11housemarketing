@@ -6,16 +6,19 @@ import { PractitionerResults } from '../sections/PractitionerResults'
 import { PricingCardsSection } from '../sections/PricingCardsSection'
 import { FaqSection } from '../sections/FaqSection'
 import { ProductExperience } from './ProductExperience'
+import { FinaleHand } from './FinaleHand'
+import './finaleHand.css'
 import { FinaleFooter } from './FinaleFooter'
 import { JourneySceneAdapter } from './JourneySceneAdapter'
-import { attachFinaleScrollCompletion } from './finaleScrollCompletion'
 import { attachOpeningScrollCompletion } from './openingScrollCompletion'
-import { clamp01, sampleFinaleCurtain, sampleJourneyScene, type JourneyLayout } from './journeyMotion'
+import { clamp01, sampleJourneyScene, type JourneyLayout } from './journeyMotion'
 import { attachScrollReveal } from './scrollReveal'
 import './scrollReveal.css'
 import './journey.css'
 import './visualSystem.css'
 import './copyAlignment.css'
+import './sectionLayout.css'
+import './heroTypeTrial.css'
 
 // Keep the section available for a later launch without mounting its animations.
 const showPractitionerResults = false
@@ -43,17 +46,11 @@ export function JourneyLanding() {
     if (reducedMotion) return
     return attachOpeningScrollCompletion(window, document, () => {
       const access = rootRef.current?.querySelector('#journey-access')
-      return access ? access.getBoundingClientRect().top + window.scrollY : Infinity
+      const headerHeight = rootRef.current?.querySelector('.landing-header')?.getBoundingClientRect().height ?? 96
+      return access ? access.getBoundingClientRect().top + window.scrollY - headerHeight - 12 : Infinity
     })
   }, [reducedMotion])
 
-  useEffect(() => {
-    if (reducedMotion) return
-    return attachFinaleScrollCompletion(window, document, () => {
-      const finale = finaleRef.current
-      return finale ? finale.getBoundingClientRect().top + window.scrollY : Infinity
-    })
-  }, [reducedMotion])
 
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -92,10 +89,7 @@ export function JourneyLanding() {
       const introProgress = clamp01(y / Math.max(1, intro.offsetHeight - window.innerHeight))
       intro.style.setProperty('--opening-opacity', String(1 - clamp01((introProgress - 0.6) / 0.4)))
       if (openingStage) openingStage.inert = !reducedMotion && introProgress >= 0.99
-      const curtain = sampleFinaleCurtain(y, layout.finaleTop, window.innerHeight, reducedMotion)
-      root.dataset.finaleCurtain = String(curtain.active)
-      root.style.setProperty('--finale-curtain-offset', `${curtain.offset}px`)
-      root.style.setProperty('--finale-curtain-hold', `${curtain.hold}px`)
+      // Reading sections must never be translated, clipped or skipped on the way to the finale.
       if (finaleStage) finaleStage.inert = !reducedMotion && layout.finaleTop - y >= window.innerHeight
     }
     const advance = (frameTime: number) => {
@@ -130,8 +124,14 @@ export function JourneyLanding() {
   }, [reducedMotion, scrollAdapter])
 
   const openSection = (target: string) => {
-    const destination = document.querySelector<HTMLElement>(target)
-    destination?.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'start' })
+    const anchor = document.querySelector<HTMLElement>(target)
+    const destination = anchor?.closest<HTMLElement>('section') ?? anchor
+    if (destination) {
+      const headerHeight = rootRef.current?.querySelector('.landing-header')?.getBoundingClientRect().height ?? 96
+      const inset = target === '#top' ? 0 : headerHeight + 12
+      // Section bounds are stable; reveal-animated headings are not navigation targets.
+      window.scrollTo({ top: Math.max(0, destination.getBoundingClientRect().top + window.scrollY - inset), behavior: reducedMotion ? 'instant' : 'smooth' })
+    }
     if (destination) {
       destination.tabIndex = -1
       destination.focus({ preventScroll: true })
@@ -148,11 +148,11 @@ export function JourneyLanding() {
       <LandingHeader onNavigate={navigate} destinations={navigationTargets} />
       <a className="eh-journey__skip" href="#journey-access">Перейти к знакомству с приложением</a>
       <main className="eh-journey__story">
-        <section id="top" tabIndex={-1} className="eh-journey__opening" ref={introRef} aria-labelledby="journey-title">
+        <section id="top" tabIndex={-1} className="eh-journey__opening eh-hero-type-trial" ref={introRef} aria-labelledby="journey-title">
           <div className="eh-journey__opening-stage">
             <h1 id="journey-title" className="eh-journey__split-title">
-              <span className="eh-journey__split-start"><span>Вся практика<br />астролога</span></span>
-              <span className="eh-journey__split-end"><span>в одном<br />приложении</span></span>
+              <span className="eh-journey__split-start"><span>Вся практи<span className="eh-type-soft">ка</span><br /><em className="eh-type-italic">астролога</em></span></span>
+              <span className="eh-journey__split-end"><span>в одном<br />приложен<span className="eh-type-soft">ии</span></span></span>
             </h1>
             <a className="eh-journey__start" href="https://app.elevenhouse.ai/auth?mode=register">
               Начать бесплатно
@@ -168,8 +168,9 @@ export function JourneyLanding() {
           <PricingCardsSection />
           <FaqSection />
         </div>
-        <section className="eh-journey__finale" id="journey-finale" tabIndex={-1} ref={finaleRef} aria-labelledby="journey-finale-title">
+        <section className="eh-journey__finale eh-finale-hand-trial" id="journey-finale" tabIndex={-1} ref={finaleRef} aria-labelledby="journey-finale-title">
           <div className="eh-journey__finale-stage">
+            <div className="eh-finale-hand-copy">
             <h2 id="journey-finale-title" className="eh-journey__split-title">
               <span className="eh-journey__split-start"><span>Меньше времени<br />на рутину</span></span>
               <span className="eh-journey__split-end"><span>больше<br />на консультации</span></span>
@@ -177,6 +178,8 @@ export function JourneyLanding() {
             <div className="eh-journey__finale-action">
               <a href="https://app.elevenhouse.ai/auth?mode=register">Начать бесплатно</a>
             </div>
+            </div>
+            <FinaleHand reducedMotion={reducedMotion} />
             <FinaleFooter />
           </div>
         </section>

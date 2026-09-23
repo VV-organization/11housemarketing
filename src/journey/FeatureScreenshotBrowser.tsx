@@ -2,6 +2,15 @@ import { useRef, useState, type KeyboardEvent } from 'react'
 import { featureChoiceIcons } from './featureChoiceIcons'
 import { featureScreenshots } from './featureScreenshots'
 import './featureScreenshotBrowser.css'
+import './featureCopyHierarchy.css'
+
+const benefitPhrases = ['в одном календаре', 'в одном кабинете', 'в одном рабочем пространстве', 'консультации, пакеты, подписки и платные материалы', 'перейдите к видеоконсультации', 'сохранять контекст сопровождения', 'повторяющиеся действия в ваш сценарий', 'контент-план и публикации по расписанию', 'за продажами и оплатами']
+
+function HighlightBenefit({ text, phrase }: { text: string; phrase: string }) {
+  const start = text.indexOf(phrase)
+  if (start < 0) return <>{text}</>
+  return <>{text.slice(0, start)}<strong>{phrase}</strong>{text.slice(start + phrase.length)}</>
+}
 
 export function FeatureScreenshotBrowser() {
   const [selected, setSelected] = useState(0)
@@ -51,11 +60,11 @@ export function FeatureScreenshotBrowser() {
     </div>
 
     <div id="eh-feature-panel" role="tabpanel" aria-labelledby={`eh-feature-tab-${feature.id}`} tabIndex={0} className="eh-feature-browser__panel" key={feature.id}>
-      <div className="eh-feature-browser__copy">
+      <div className="eh-feature-browser__copy eh-feature-copy-editorial">
         <h3>{feature.title}</h3>
-        <p className="eh-feature-browser__description">{feature.description}</p>
-        <ol className="eh-feature-browser__steps">{feature.steps.map((step, index) => <li key={step}><span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><span>{step}</span></li>)}</ol>
-        {feature.note && <p className="eh-feature-browser__note">{feature.note}</p>}
+        <p className="eh-feature-browser__description"><HighlightBenefit text={feature.description} phrase={benefitPhrases[selected]} /></p>
+        <ol className="eh-feature-browser__steps">{feature.steps.map((step, index) => <li key={step}><span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><span><strong>{step.split(' ')[0]}</strong>{' '}{step.slice(step.indexOf(' ') + 1)}</span></li>)}</ol>
+        {feature.note && <p className="eh-feature-browser__note"><HighlightBenefit text={feature.note} phrase={feature.note.includes('бесплатный тариф') ? 'бесплатный тариф' : feature.note.includes('Team Pro') ? 'Team Pro' : 'Start'} /></p>}
       </div>
       <figure className="eh-feature-browser__figure">
         <button type="button" className="eh-feature-browser__screen" onClick={enlarge} aria-label={`Увеличить: ${feature.caption}`} aria-haspopup="dialog">

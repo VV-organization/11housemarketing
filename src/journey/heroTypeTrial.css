@@ -1,0 +1,52 @@
+/* Explicit user-approved Hero text/CTA experiment, 23 Sep.
+   Reference: oversized sans + italic contrast, selective optical blur, luminous disc CTA.
+   No canvas, background, header, scroll timing or other section selectors. */
+.eh-journey .eh-hero-type-trial .eh-journey__split-title :is(.eh-journey__split-start, .eh-journey__split-end) {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(56px, 7.2vw, 116px);
+  font-weight: 400;
+  line-height: 1.03;
+  letter-spacing: -.045em;
+  word-spacing: .06em;
+  overflow: visible;
+}
+.eh-journey .eh-hero-type-trial .eh-type-italic {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400; font-size: 1.12em; letter-spacing: -.055em;
+  color: #e4ce87;
+}
+.eh-journey .eh-hero-type-trial .eh-type-soft {
+  display: inline-block;
+  filter: blur(2.1px);
+  opacity: .85;
+  text-shadow: 5px 0 10px #dfe8ff40;
+  transition: filter .6s, opacity .6s;
+}
+.eh-journey .eh-hero-type-trial h1:hover .eh-type-soft { filter: blur(0); opacity: 1; }
+.eh-journey .eh-hero-type-trial .eh-journey__start {
+  width: clamp(128px, 12vw, 178px); height: clamp(128px, 12vw, 178px);
+  min-width: 0; min-height: 0; padding: 22px;
+  border: 1px solid #fff9e8; border-radius: 50%;
+  background: #f5f3ec; color: #111c2f;
+  font-size: 11px; line-height: 1.4; letter-spacing: -.015em;
+  box-shadow: 8px 5px 13px -4px #e9ca83, -5px 9px 21px -9px #c9ddff;
+  transition: box-shadow .35s, background .35s, scale .35s;
+}
+.eh-journey .eh-hero-type-trial .eh-journey__start:hover {
+  background: #fffaf0; scale: 1.045;
+  box-shadow: 10px 6px 23px -4px #e9ca83, -7px 10px 26px -7px #c9ddff;
+}
+.eh-journey .eh-hero-type-trial .eh-journey__start:focus-visible { outline: 2px solid #e4ce87; outline-offset: 8px; }
+@media (min-width:701px) and (max-height:760px) {
+  .eh-journey .eh-hero-type-trial .eh-journey__split-title :is(.eh-journey__split-start, .eh-journey__split-end) { font-size: min(7.2vw, 9.3svh); }
+  .eh-journey .eh-hero-type-trial .eh-journey__start { width: 124px; height: 124px; }
+}
+@media (max-width:700px) {
+  .eh-journey .eh-hero-type-trial .eh-journey__split-title :is(.eh-journey__split-start, .eh-journey__split-end) { font-size: clamp(36px, 10vw, 68px); }
+  .eh-journey .eh-hero-type-trial .eh-journey__start { width: 106px; height: 106px; font-size: 10px; padding: 15px; top: 43%; }
+  .eh-journey .eh-hero-type-trial .eh-type-soft { filter: blur(1px); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .eh-journey .eh-hero-type-trial :is(.eh-type-soft, .eh-journey__start) { transition: none; }
+}
+.eh-journey[data-motion="reduced"] .eh-hero-type-trial :is(.eh-type-soft, .eh-journey__start) { transition: none; }

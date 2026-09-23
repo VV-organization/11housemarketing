@@ -18,7 +18,7 @@ export type FeatureScreenshot = {
 const screenshot = (name: string) => `${import.meta.env.BASE_URL}assets/feature-screenshots/${name}.webp`
 export const featureScreenshots: readonly FeatureScreenshot[] = [
   {
-    id: 'calendar', label: 'Запись и календарь',
+    id: 'calendar', label: 'Календарь',
     title: 'Встреча начинается с удобной записи',
     description: 'Видите свою неделю, данные клиента и детали консультации в одном календаре.',
     steps: ['Настройте доступное время', 'Получите запись в календаре', 'Откройте встречу и начните консультацию'],
@@ -34,7 +34,7 @@ export const featureScreenshots: readonly FeatureScreenshot[] = [
     note: 'Работа с клиентами доступна на Start. На скриншоте — исходный экран без выбранного клиента.',
   },
   {
-    id: 'reading', label: 'Карты и расчёты',
+    id: 'reading', label: 'Расчёты',
     title: 'Не переключайтесь между расчётами',
     description: 'Западная и ведическая астрология, нумерология, матрица судьбы и Human Design — в одном рабочем пространстве.',
     steps: ['Выберите систему расчёта', 'Введите данные клиента', 'Изучите результат и подготовьте разбор'],
@@ -42,7 +42,7 @@ export const featureScreenshots: readonly FeatureScreenshot[] = [
     note: 'Все расчёты, свои трактовки и PDF-отчёты доступны на Start.',
   },
   {
-    id: 'products', label: 'Ваши услуги',
+    id: 'products', label: 'Услуги',
     title: 'Ваши знания становятся услугой',
     description: 'Соберите предложения для клиентов: консультации, пакеты, подписки и платные материалы.',
     steps: ['Создайте услугу', 'Укажите формат и стоимость', 'Разместите на личной странице'],
@@ -82,7 +82,7 @@ export const featureScreenshots: readonly FeatureScreenshot[] = [
     note: 'На экране — настройка курса и превью для клиента.',
   },
   {
-    id: 'practice', label: 'Моя практика',
+    id: 'practice', label: 'Практика',
     title: 'Понимайте, что происходит в практике',
     description: 'Следите за продажами и оплатами, не собирая каждый раз отдельную таблицу.',
     steps: ['Откройте финансовый раздел', 'Проверьте операции и баланс', 'Посмотрите результаты работы'],

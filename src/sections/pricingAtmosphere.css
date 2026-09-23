@@ -1,0 +1,20 @@
+/* Reference Group 8: edge-lit blue surfaces and fine gold trajectories.
+   Decorative layer is limited to the empty perimeter; no extra motion or text. */
+.eh-journey .eh-pricing-cards__card .eh-price-atmosphere {
+  position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none;
+  background: radial-gradient(ellipse at 100% 0%, #80b5e51a, transparent 38%), radial-gradient(ellipse at 100% 100%, #7a9bc014, transparent 29%);
+}
+.eh-journey .eh-pricing-cards__card[data-plan="pro"] .eh-price-atmosphere {
+  background: radial-gradient(ellipse at 100% 0%, #e6cb7a15, transparent 38%), radial-gradient(ellipse at 100% 100%, #d2ad5414, transparent 29%);
+}
+.eh-journey .eh-price-atmosphere svg {
+  position: absolute; bottom: 0; right: 0; width: 100%; height: 115px;
+  fill: none; stroke: #9ebfe7; stroke-width: .65; opacity: .22;
+  mask-image: linear-gradient(90deg, transparent 38%, #000 100%);
+}
+.eh-journey .eh-price-atmosphere circle { fill: #e7d18f; stroke: none; }
+.eh-journey .eh-pricing-cards__card[data-plan="pro"] .eh-price-atmosphere svg { stroke: #e5c775; opacity: .28; }
+.eh-journey .eh-pricing-cards__card > :not(.eh-price-atmosphere) { position: relative; }
+@media (max-width: 800px) {
+  .eh-journey .eh-price-atmosphere svg { height: 90px; opacity: .18; }
+}

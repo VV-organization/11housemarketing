@@ -3,6 +3,8 @@ import { Icon } from '../journey/SourceIcons'
 import monogram from '../assets/brand/eh-monogram-gold.svg'
 import wordmark from '../assets/brand/eleven-house-stacked.svg'
 import './workflowComparison.css'
+import { WorkflowEmblem } from './WorkflowEmblem'
+import './workflowTaskCards.css'
 
 // Composition and copy: the user-supplied ElevenHouse design preview, #comparison.
 const comparisonRows = [
@@ -52,8 +54,8 @@ export function OneClientStory() {
   return <section className="eh-workflow-shift" id="workflow-compare" aria-labelledby="workflow-compare-title" ref={stage} data-animate={motion}>
     <div className="eh-workflow-shift__inner">
       <header className="eh-workflow-shift__intro">
-        <div data-reveal><h2 id="workflow-compare-title">Меньше рутины.<br /><span>Больше времени<br />на клиентов.</span></h2></div>
-        <p className="eh-workflow-shift__lead" data-reveal>Та же практика.<br /><span>Совсем другой рабочий день.</span></p>
+        <div data-reveal><h2 id="workflow-compare-title">Меньше рутины.<br /><span>Больше времени на клиентов.</span></h2></div>
+        <p className="eh-workflow-shift__lead" data-reveal>Та же практика. <span>Совсем другой рабочий день.</span></p>
       </header>
 
       <div className="eh-workflow-shift__stage">
@@ -61,9 +63,8 @@ export function OneClientStory() {
           <header data-reveal><h3>Ручной режим</h3><p>Каждая задача — в отдельном месте</p></header>
           <div className="eh-workflow-shift__fragments">
             {comparisonRows.map((row, index) => {
-              const RowIcon = Icon[row.icon]
-              return <button key={row.manual} type="button" className="eh-workflow-shift__fragment" data-reveal aria-pressed={active === index} aria-controls={`eh-workflow-result-${index}`} style={{ '--row': index } as CSSProperties} onClick={() => setActive(index)} onFocus={() => setActive(index)} onPointerEnter={(event) => { if (event.pointerType === 'mouse') setActive(index) }}>
-                <RowIcon size={23} /><span><strong>{row.manual}</strong><small>{row.friction}</small></span>
+              return <button key={row.manual} type="button" className="eh-workflow-shift__fragment eh-task-card" data-reveal aria-pressed={active === index} aria-controls={`eh-workflow-result-${index}`} style={{ '--row': index } as CSSProperties} onClick={() => setActive(index)} onFocus={() => setActive(index)} onPointerEnter={(event) => { if (event.pointerType === 'mouse') setActive(index) }}>
+                <WorkflowEmblem index={index} /><span className="eh-task-card__copy"><strong>{row.manual}</strong><small>{row.friction}</small></span>
               </button>
             })}
           </div>

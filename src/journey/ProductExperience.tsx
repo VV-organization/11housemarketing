@@ -17,7 +17,7 @@ export function ProductExperience({ reducedMotion, onNavigate }: { reducedMotion
       {/* Preserve existing entry links and opening-scroll destination without an empty section. */}
       {!showAccessIntro && <span id="journey-access" tabIndex={-1} style={{ position: 'absolute', top: 0, left: 0 }} />}
       <header className="eh-experience__heading">
-        <h2 id="features-title">От записи клиента до консультации — всё под рукой</h2>
+        <h2 id="features-title">От записи клиента <br className="eh-feature-title-break" />до консультации — всё под рукой</h2>
         <p>Выберите задачу и посмотрите, как она устроена. Без регистрации.</p>
       </header>
       <FeatureScreenshotBrowser />

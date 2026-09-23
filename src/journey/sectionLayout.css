@@ -1,0 +1,311 @@
+/* Shared editorial scale for content sections only. No Hero/finale/header selectors.
+   Reference: approved composition and September 23 compact-layout feedback.
+   Natural heights remain available for zoom, mobile and expanded FAQ answers. */
+.eh-journey :is(#journey-workspace, #workflow-compare, #pricing, .faq-section) {
+  --eh-content-title: clamp(30px, 3.2vw, 46px);
+  padding-block: 28px;
+  scroll-margin-top: 104px;
+}
+.eh-journey :is(#features-title, #workflow-compare-title, #pricing-title, #faq-title) {
+  font: 400 var(--eh-content-title)/1.12 'EH Vetrino', 'Manrope', sans-serif;
+  letter-spacing: 0;
+  color: #e2ca79;
+  text-wrap: balance;
+  margin: 0;
+}
+.eh-journey #workflow-compare-title span { color: inherit; }
+.eh-journey #journey-workspace { min-height: 0; isolation: isolate; }
+.eh-journey #journey-workspace::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, #03091700, #030917c9 15%, #03091799 80%, #03091700);
+}
+.eh-journey #workflow-compare::before {
+  background: linear-gradient(180deg, #03091700, #030917cf 12%, #030917a3 85%, #03091700);
+}
+.eh-journey #journey-workspace .eh-experience__heading { margin-bottom: 20px; width: min(1120px, 100%); }
+.eh-journey #features-title { max-width: 34ch; }
+.eh-journey #journey-workspace .eh-experience__heading > p { margin-top: 12px; color: #d0d8e6; }
+.eh-journey .eh-feature-browser__tabs { gap: 8px; margin-bottom: 18px; }
+.eh-journey .eh-feature-browser__tab { min-height: 42px; padding: 9px 14px; font-size: 13px; }
+.eh-journey .eh-feature-browser__copy { padding: 22px; background: linear-gradient(135deg, #304057ad, #0b172acc 65%, #26354aab); }
+.eh-journey .eh-feature-browser__copy h3 { font-size: 28px; line-height: 1.16; margin-bottom: 14px; color: #f0dc9e; text-wrap: pretty; }
+.eh-journey .eh-feature-browser__description { font-size: 14px; line-height: 1.55; }
+.eh-journey .eh-feature-browser__steps { gap: 10px; margin-top: 18px; }
+.eh-journey .eh-feature-browser__steps li { font-size: 13px; line-height: 1.5; }
+.eh-journey .eh-feature-browser__copy .eh-feature-browser__steps { margin-bottom: 16px; }
+.eh-journey .eh-feature-browser__copy .eh-feature-browser__note { padding-top: 12px; line-height: 1.5; }
+.eh-journey .eh-feature-browser__figure figcaption { margin-top: 8px; padding-block: 2px; }
+.eh-journey .eh-workflow-shift__intro { display: block; margin-bottom: 24px; }
+.eh-journey .eh-workflow-shift__lead { margin: 12px 0 0; line-height: 1.5; color: #d0d8e6; }
+.eh-journey .eh-workflow-shift__lead span { color: inherit; }
+.eh-journey .eh-workflow-shift__manual { padding-top: 0; }
+.eh-journey .eh-workflow-shift__manual > header { margin-bottom: 16px; }
+.eh-journey .eh-workflow-shift__manual h3 { margin: 0 0 5px; font-size: 26px; color: #f0dc9e; }
+.eh-journey .eh-workflow-shift__fragments { gap: 12px; padding-block: 6px; }
+.eh-journey .eh-workflow-shift__fragment { min-height: 66px; padding: 12px 18px; }
+.eh-journey .eh-workflow-shift__fragment small { margin-top: 4px; }
+.eh-journey .eh-workflow-shift__system-heading { padding: 16px 26px; }
+.eh-journey .eh-workflow-shift__system-heading > img { width: 76px; height: 46px; }
+.eh-journey .eh-workflow-shift__results { padding-block: 4px; }
+.eh-journey .eh-workflow-shift__result { min-height: 72px; padding-block: 12px; }
+.eh-journey .eh-workflow-shift__result h4 { font-size: 16px; margin-bottom: 4px; }
+.eh-journey .eh-workflow-shift__bridge { margin-block: 66px 10px; }
+.eh-journey .eh-workflow-shift__closing { margin-top: 22px; padding-top: 16px; }
+.eh-journey .eh-workflow-shift__closing > p { font-size: 26px; }
+.eh-journey .eh-workflow-shift__closing a { min-height: 44px; padding-block: 12px; }
+.eh-journey #pricing .pricing-section__heading { gap: 8px; }
+.eh-journey #pricing .pricing-section__heading .pricing-section__subtitle { font-size: 20px; }
+.eh-journey #pricing .pricing-section__heading > p:not(.pricing-section__subtitle) { font-size: 14px; }
+.eh-journey .eh-pricing-cards__grid { margin-top: 22px; padding-block: 0; gap: 20px; }
+.eh-journey .eh-pricing-cards__card { padding: 20px; margin-block: 12px; }
+.eh-journey .eh-pricing-cards__card[data-plan="pro"] { padding-block: 32px; }
+.eh-journey .eh-pricing-cards__top { min-height: 0; margin-bottom: 8px; }
+.eh-journey .eh-pricing-cards__top img { width: 24px; height: 24px; }
+.eh-journey .eh-pricing-cards__top > span { padding-block: 3px; }
+.eh-journey .eh-pricing-cards__name { min-height: 30px; }
+.eh-journey .eh-pricing-cards__name h3 { font-size: 28px; }
+.eh-journey .eh-pricing-cards__audience { min-height: 40px; margin-block: 6px 10px; font-size: 13px; line-height: 1.5; }
+.eh-journey .eh-pricing-cards__price { flex-direction: row; align-items: baseline; gap: 8px; }
+.eh-journey .eh-pricing-cards__price strong { font-size: 40px; }
+.eh-journey .eh-pricing-cards__commission { margin-block: 10px; }
+.eh-journey .eh-pricing-cards__action { min-height: 44px; padding-block: 10px; }
+.eh-journey .eh-pricing-cards__includes { margin-block: 14px 10px; }
+.eh-journey .eh-pricing-cards__card ul { gap: 6px; line-height: 1.45; margin-bottom: 14px; }
+.eh-journey .eh-pricing-cards__card footer { padding-top: 10px; }
+.eh-journey .eh-pricing-cards__card footer p { display: inline; margin: 0; }
+.eh-journey .eh-pricing-cards__card footer p + p::before { content: ' '; }
+.eh-journey .eh-pricing-cards__terms { margin-top: 16px; line-height: 1.5; }
+.eh-journey .eh-pricing-cards__terms p { margin-block: 4px; }
+.eh-journey .faq-section { grid-template-columns: 1fr; gap: 24px; }
+.eh-journey .faq-section > header { text-align: center; }
+.eh-journey .faq-section__list { width: min(100%, 960px); margin-inline: auto; }
+.eh-journey .faq-section summary { min-height: 64px; padding-block: 16px; }
+@media (min-width: 1001px) {
+  .eh-journey .eh-feature-browser__panel { grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr); gap: 0 24px; }
+  .eh-journey .eh-feature-browser__screen { aspect-ratio: auto; min-height: 350px; }
+}
+@media (max-width: 1000px) {
+  .eh-journey :is(#journey-workspace, #workflow-compare, #pricing, .faq-section) { padding-block: 40px; }
+  .eh-journey .eh-feature-browser__screen { aspect-ratio: 1800 / 1024; }
+  .eh-journey .eh-workflow-shift__bridge { margin-block: 0; }
+  .eh-journey .eh-pricing-cards__grid { gap: 20px; }
+}
+@media (max-width: 600px) {
+  .eh-journey .eh-feature-browser__copy { padding: 22px 18px; }
+  .eh-journey .eh-feature-browser__copy h3 { font-size: 26px; }
+  .eh-journey .eh-workflow-shift__lead { font-size: 14px; }
+  .eh-journey .eh-workflow-shift__closing { gap: 16px; }
+  .eh-journey .eh-pricing-cards__price { flex-wrap: wrap; }
+}
+/* Laptop-height rhythm: same title scale in every section, content stays readable. */
+@media (min-width: 1001px) and (max-height: 850px) {
+  .eh-journey :is(#journey-workspace, #workflow-compare, #pricing, .faq-section) {
+    --eh-content-title: clamp(30px, 5vh, 46px);
+    padding-block: 16px;
+  }
+  .eh-journey #journey-workspace .eh-experience__heading { margin-bottom: 14px; }
+  .eh-journey .eh-feature-browser__tabs { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 6px; margin-bottom: 14px; }
+  .eh-journey .eh-feature-browser__tab { min-height: 52px; padding: 7px 8px; gap: 6px; font-size: 12px; }
+  .eh-journey .eh-feature-browser__tab img { width: 18px; height: 18px; }
+  .eh-journey .eh-feature-browser__copy { padding: 18px; }
+  .eh-journey .eh-feature-browser__copy h3 { font-size: 26px; margin-bottom: 10px; }
+  .eh-journey .eh-feature-browser__steps { margin-top: 12px; gap: 8px; }
+  .eh-journey .eh-feature-browser__copy .eh-feature-browser__steps { margin-bottom: 12px; }
+  .eh-journey .eh-feature-browser__screen { min-height: 300px; }
+  .eh-journey .eh-workflow-shift__intro { margin-bottom: 18px; }
+  .eh-journey .eh-workflow-shift__fragment { padding-block: 9px; min-height: 62px; }
+  .eh-journey .eh-workflow-shift__manual > header { margin-bottom: 10px; }
+  .eh-journey .eh-workflow-shift__fragments { gap: 10px; }
+  .eh-journey .eh-workflow-shift__system-heading { padding-block: 12px; }
+  .eh-journey .eh-workflow-shift__result { min-height: 68px; padding-block: 10px; }
+  .eh-journey .eh-workflow-shift__closing { margin-top: 16px; padding-top: 12px; }
+  .eh-journey .eh-pricing-cards__grid { margin-top: 16px; }
+  .eh-journey .eh-pricing-cards__card { padding: 16px 20px; margin-block: 8px; }
+  .eh-journey .eh-pricing-cards__card[data-plan="pro"] { padding-block: 24px; }
+  .eh-journey .eh-pricing-cards__top { position: absolute; right: 20px; top: 16px; margin: 0; }
+  .eh-journey .eh-pricing-cards__top img { display: none; }
+  .eh-journey .eh-pricing-cards__top > span { font-size: 10px; }
+  .eh-journey .eh-pricing-cards__name { align-items: start; flex-direction: column; gap: 2px; }
+  .eh-journey .eh-pricing-cards__audience { display: none; }
+  .eh-journey .eh-pricing-cards__price { margin-top: 12px; }
+  .eh-journey .eh-pricing-cards__includes { margin-top: 12px; }
+  .eh-journey .eh-pricing-cards__terms { margin-top: 12px; }
+}
+@media (min-width: 1001px) and (max-height: 850px) {
+  .eh-journey #pricing { padding-block: 8px; }
+  .eh-journey .eh-pricing-cards__grid { margin-top: 12px; }
+}
+.eh-journey :is(#features-title, #workflow-compare-title, #pricing-title, #faq-title) { scroll-margin-top: 112px; }
+@media (min-width: 1001px) and (max-height: 760px) {
+  .eh-journey #pricing { padding-block: 4px; }
+  .eh-journey #pricing .pricing-section__heading { gap: 0; }
+  .eh-journey #pricing .pricing-section__heading .pricing-section__subtitle { font-size: 18px; }
+  .eh-journey .eh-pricing-cards__card ul { gap: 2px; }
+  .eh-journey .eh-pricing-cards__includes { margin-block: 8px 6px; }
+  .eh-journey .eh-pricing-cards__card footer { padding-top: 6px; }
+  .eh-journey .eh-pricing-cards__price { margin-top: 8px; }
+  .eh-journey .eh-pricing-cards__commission { margin-block: 6px; }
+  .eh-journey .eh-pricing-cards__grid { margin-top: 8px; }
+  .eh-journey .eh-pricing-cards__terms { margin-top: 8px; }
+}
+
+/* Each compact chapter keeps a viewport-sized reading area below the fixed header.
+   No snapping or fixed height: expanded answers and zoom can grow naturally. */
+@media (min-width: 1001px) {
+  .eh-journey :is(#journey-workspace, #workflow-compare, #pricing, .faq-section) {
+    min-height: calc(100svh - 104px);
+  }
+  .eh-journey #workflow-compare { display: grid; align-content: center; }
+  .eh-journey .faq-section { align-content: center; }
+}
+
+/* One alignment for all primary content headings, at every breakpoint. */
+.eh-journey :is(.eh-experience__heading, .eh-workflow-shift__intro, .pricing-section__heading, .faq-section > header) {
+  text-align: center;
+}
+.eh-journey :is(#features-title, #workflow-compare-title, #pricing-title, #faq-title) {
+  text-align: center;
+  margin-inline: auto;
+}
+/* Uniform screenshot previews: the frame follows the common screenshot ratio.
+   Taller source captures are cropped only here; the zoom dialog keeps the full image. */
+.eh-journey .eh-feature-browser__screen > img { object-fit: cover; object-position: top center; }
+@media (min-width: 1001px) {
+  .eh-journey .eh-feature-browser__panel {
+    --preview-height: clamp(320px, min(calc(100svh - 385px), calc((100vw - 140px) * .58 * 1024 / 1800)), 560px);
+    width: min(1440px, 100%);
+    margin-inline: auto;
+    grid-template-columns: minmax(0, 1fr) calc(var(--preview-height) * 1800 / 1024);
+    grid-template-rows: var(--preview-height) auto;
+  }
+  .eh-journey .eh-feature-browser__screen {
+    min-height: 0;
+    height: 100%;
+    aspect-ratio: 1800 / 1024;
+  }
+}
+@media (min-width: 1001px) and (max-width: 1199px) {
+  .eh-journey .eh-feature-browser__panel { --preview-height: 340px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); }
+}
+/* Keep the comparison wide when its outer section is a centered grid. */
+.eh-journey .eh-workflow-shift__inner { width: min(1100px, 100%); }
+
+.eh-journey #features-title { max-width: 38ch; }
+@media (max-width: 600px) {
+  .eh-journey .eh-feature-title-break { display: none; }
+}
+
+/* Short task names keep the desktop navigation on one line, leaving room for the demo. */
+@media (min-width: 1001px) {
+  .eh-journey .eh-feature-browser__tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 6px;
+  }
+  .eh-journey .eh-feature-browser__tab {
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 8px 12px;
+    gap: 6px;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+  .eh-journey .eh-feature-browser__tab img { width: 18px; height: 18px; }
+}
+@media (min-width: 1001px) and (max-width: 1399px) {
+  .eh-journey .eh-feature-browser__tab { font-size: 12px; padding-inline: 9px; }
+}
+@media (min-width: 1001px) and (max-width: 1199px) {
+  .eh-journey .eh-feature-browser__tabs { gap: 4px; }
+  .eh-journey .eh-feature-browser__tab { font-size: 11px; padding-inline: 7px; gap: 4px; }
+}
+
+/* A loose task stack: overlap only the quiet card edges, keep every label exposed. */
+@media (min-width: 1001px) {
+  .eh-journey .eh-workflow-shift__inner { width: min(1200px, 100%); }
+  .eh-journey .eh-workflow-shift__manual { padding-right: 8px; }
+  .eh-journey .eh-workflow-shift__manual > header { margin-bottom: 20px; }
+  .eh-journey .eh-workflow-shift__fragments { gap: 0; padding-block: 8px 12px; isolation: isolate; }
+  .eh-journey .eh-workflow-shift__fragment {
+    position: relative;
+    z-index: calc(1 + var(--row));
+    width: calc(100% - 52px);
+    min-height: 88px;
+    padding: 12px 20px 26px;
+    gap: 14px;
+    background: #0b1628;
+    box-shadow: 0 8px 20px #02071240;
+    --tilt: -2deg;
+  }
+  .eh-journey .eh-workflow-shift__fragment + .eh-workflow-shift__fragment { margin-top: -18px; }
+  .eh-journey .eh-workflow-shift__fragment:nth-child(2) { --offset: 48px; --tilt: 1.5deg; }
+  .eh-journey .eh-workflow-shift__fragment:nth-child(3) { --offset: 8px; --tilt: -1.5deg; }
+  .eh-journey .eh-workflow-shift__fragment:nth-child(4) { --offset: 40px; --tilt: 1deg; }
+  .eh-journey .eh-workflow-shift__fragment strong { font-size: 16px; }
+  .eh-journey .eh-workflow-shift__fragment small { font-size: 13px; margin-top: 3px; }
+  .eh-journey .eh-workflow-shift__result h4 { font-size: 17px; }
+}
+
+/* Let the product demonstration use the remaining desktop viewport. */
+@media (min-width: 1200px) {
+  .eh-journey .eh-feature-browser__copy { padding: 24px; }
+  .eh-journey .eh-feature-browser__copy h3 { font-size: 32px; }
+  .eh-journey .eh-feature-browser__description { font-size: 15px; }
+  .eh-journey .eh-feature-browser__steps li { font-size: 14px; }
+}
+@media (min-width: 1200px) and (max-height: 760px) {
+  .eh-journey .eh-feature-browser__copy { padding: 18px; }
+  .eh-journey .eh-feature-browser__copy h3 { font-size: 28px; }
+  .eh-journey .eh-feature-browser__description { font-size: 14px; }
+  .eh-journey .eh-feature-browser__steps li { font-size: 13px; }
+}
+@media (min-width: 1200px) {
+  .eh-journey .eh-feature-browser { width: min(1440px, 100%); }
+}
+@media (min-width: 1200px) and (min-height: 851px) {
+  .eh-journey .eh-feature-browser__panel {
+    --preview-height: clamp(340px, min(calc(100svh - 415px), calc((100vw - 140px) * .58 * 1024 / 1800)), 560px);
+  }
+}
+
+/* Expand the comparison into the available desktop reading area. */
+@media (min-width: 1001px) {
+  .eh-journey .eh-workflow-shift__inner { width: min(1440px, 100%); max-width: 1440px; }
+  .eh-journey .eh-workflow-shift__stage { min-height: clamp(380px, calc(100svh - 395px), 620px); }
+  .eh-journey .eh-workflow-shift__manual { display: flex; flex-direction: column; }
+  .eh-journey .eh-workflow-shift__fragments { flex: 1; grid-template-rows: repeat(4, minmax(0, 1fr)); }
+  .eh-journey .eh-workflow-shift__system { display: flex; flex-direction: column; }
+  .eh-journey .eh-workflow-shift__results { flex: 1; display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 1200px) and (min-height: 800px) {
+  .eh-journey .eh-workflow-shift__fragment strong { font-size: 18px; }
+  .eh-journey .eh-workflow-shift__fragment small { font-size: 14px; }
+  .eh-journey .eh-workflow-shift__result h4 { font-size: 19px; }
+  .eh-journey .eh-workflow-shift__result p { font-size: 15px; }
+  .eh-journey .eh-workflow-shift__system-heading h3 { font-size: 18px; }
+  .eh-journey .eh-workflow-shift__system-heading > img { width: 90px; height: 55px; }
+}
+@media (min-width: 1001px) {
+  .eh-journey .eh-workflow-shift__stage { min-height: clamp(360px, calc(100svh - 415px), 600px); }
+  .eh-journey .eh-workflow-shift__fragments { display: flex; flex-direction: column; }
+  .eh-journey .eh-workflow-shift__fragment { flex: 1 0 auto; }
+}
+@media (min-width: 1001px) and (max-height: 760px) {
+  .eh-journey .eh-workflow-shift__fragment { min-height: 84px; }
+  .eh-journey .eh-workflow-shift__manual > header { margin-bottom: 16px; }
+}
+/* Narrow only the text card; keep the screenshot column and frame unchanged. */
+@media (min-width: 1200px) {
+  .eh-journey .eh-feature-browser__copy {
+    width: 100%;
+    max-width: 440px;
+    justify-self: end;
+  }
+}
+/* Center the visible pair after narrowing the copy, not its former empty grid track. */
+@media (min-width: 1200px) {
+  .eh-journey .eh-feature-browser__panel {
+    width: min(100%, calc(440px + 24px + var(--preview-height) * 1800 / 1024));
+  }
+}
