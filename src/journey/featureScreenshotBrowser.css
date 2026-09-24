@@ -29,7 +29,7 @@
 .eh-journey .eh-feature-browser__dialog-heading button { display: flex; align-items: center; gap: 12px; flex-shrink: 0; min-height: 44px; border: 1px solid var(--eh-line); border-radius: 999px; padding: 8px 14px; font: inherit; font-size: 13px; color: var(--eh-accent); background: #101b2e; cursor: pointer; }
 .eh-journey .eh-feature-browser__dialog-heading button span { font-size: 24px; }
 .eh-journey .eh-feature-browser__zoom-scroll { overflow: auto; overscroll-behavior: contain; max-height: calc(100dvh - 210px); border-radius: 9px; }
-.eh-journey .eh-feature-browser__zoom-scroll img { display: block; width: 100%; min-width: 1000px; height: auto; aspect-ratio: auto; object-fit: contain; }
+.eh-journey .eh-feature-browser__zoom-scroll img { display: block; width: 100%; min-width: 1000px; margin-inline: auto; height: auto; aspect-ratio: auto; object-fit: contain; }
 .eh-journey .eh-feature-browser__dialog-content > p { margin: 14px 0 0; font-size: 12px; line-height: 1.5; color: var(--eh-muted); }
 @keyframes eh-feature-panel-in { from { opacity: .45; } to { opacity: 1; } }
 @media (max-width: 1000px) {

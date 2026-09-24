@@ -3,6 +3,7 @@ import { Icon } from '../journey/SourceIcons'
 import monogram from '../assets/brand/eh-monogram-gold.svg'
 import wordmark from '../assets/brand/eleven-house-stacked.svg'
 import './workflowComparison.css'
+import './workflowWorkspace.css'
 import { WorkflowEmblem } from './WorkflowEmblem'
 import './workflowTaskCards.css'
 

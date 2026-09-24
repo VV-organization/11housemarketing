@@ -1,0 +1,54 @@
+/* Supplied blue optical emblems and horizon-light reference, reduced to a
+   single connected workspace. Scoped to the right-hand panel only. */
+.eh-journey .eh-workflow-shift__system {
+  background: radial-gradient(ellipse at 100% 0%, #31557b32, transparent 58%), #081222;
+  border-color: #b9cee13b;
+  box-shadow: inset 0 1px 0 #d4eaff29, 0 24px 64px -40px #000;
+}
+.eh-journey .eh-workflow-shift__system-heading {
+  position: relative;
+  background: linear-gradient(110deg, #86bfff09, transparent 65%);
+  border-bottom-color: #a5c9ec26;
+}
+.eh-journey .eh-workflow-shift__system-heading::after {
+  content: ''; position: absolute; bottom: -1px; left: 20%; right: 8%; height: 1px;
+  background: linear-gradient(90deg, transparent, #c3e4ff8c, transparent);
+}
+.eh-journey .eh-workflow-shift__result { border-bottom-color: transparent; isolation: isolate; }
+.eh-journey .eh-workflow-shift__result::after {
+  content: ''; position: absolute; left: 17px; top: calc(50% + 18px);
+  height: calc(100% - 36px); width: 1px;
+  background: linear-gradient(#96caff55, #96caff18);
+  z-index: -1;
+}
+.eh-journey .eh-workflow-shift__result:last-child::after { display: none; }
+.eh-journey .eh-workflow-shift__result::before {
+  inset: 5px -12px; border-radius: 12px;
+  background: radial-gradient(ellipse at 0% 50%, #79bdff20, transparent 65%), linear-gradient(90deg, #528cc216, transparent);
+  border: 1px solid #89c5fa19;
+}
+.eh-journey .eh-workflow-shift__check {
+  position: relative; display: grid; place-items: center; flex: 0 0 35px; height: 35px;
+  border: 1px solid #8ac8ff45; border-radius: 50%;
+  color: #a9d7ff; background: #0b1a2e;
+  box-shadow: inset 0 0 0 4px #80bdff06, inset 0 1px 4px #b0daff18;
+}
+.eh-journey .eh-workflow-shift__check::before {
+  content: ''; position: absolute; inset: 4px; border-radius: inherit;
+  border: 1px solid #91caff1a;
+}
+.eh-journey .eh-workflow-shift__check svg { width: 15px; height: 15px; }
+.eh-journey .eh-workflow-shift__result[data-active="true"] .eh-workflow-shift__check {
+  transform: none; color: #e2f3ff; border-color: #9bd3ff9c;
+  box-shadow: 0 0 16px #68baff25, inset 0 0 10px #79bcff22;
+}
+.eh-journey .eh-workflow-shift__result[data-active="true"] .eh-workflow-shift__check::after {
+  content: ''; position: absolute; width: 3px; height: 3px; top: 3px; left: 6px;
+  border-radius: 50%; background: #e8f7ff; box-shadow: 0 0 5px 2px #86caff80;
+}
+.eh-journey .eh-workflow-shift__result > div { position: relative; flex: 1; min-width: 0; }
+.eh-journey .eh-workflow-shift__result-number {
+  align-self: center; padding: 0; color: #91b9dc66;
+  font: 400 24px/1 'EH Vetrino', serif;
+}
+.eh-journey .eh-workflow-shift__result[data-active="true"] .eh-workflow-shift__result-number { color: #b8ddf9; }

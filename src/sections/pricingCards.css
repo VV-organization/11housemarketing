@@ -11,11 +11,11 @@
 .eh-journey .eh-pricing-cards__top img { object-fit: contain; width: 32px; height: 32px; }
 .eh-journey .eh-pricing-cards__top > span { color: #e2ca79; border: 1px solid #e2ca7955; border-radius: 6px; padding: 6px 9px; font-size: 11px; }
 .eh-journey .eh-pricing-cards__name { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; min-height: 36px; }
-.eh-journey .eh-pricing-cards__name h3 { font-size: clamp(25px, 2.3vw, 34px); font-weight: 550; line-height: 1.2; letter-spacing: -.035em; margin: 0; white-space: nowrap; }
+.eh-journey .eh-pricing-cards__name h3 { font-family: 'EH Vetrino', 'Manrope', sans-serif; font-synthesis: none; font-size: clamp(25px, 2.3vw, 34px); font-weight: 400; line-height: 1.2; letter-spacing: 0; margin: 0; white-space: nowrap; }
 .eh-journey .eh-pricing-cards__name > span { font-size: 11px; line-height: 1.5; color: #aebed0; text-align: right; }
 .eh-journey .eh-pricing-cards__audience { min-height: 45px; margin: 8px 0 14px; color: #b9c5d6; font-size: 14px; line-height: 1.6; }
 .eh-journey .eh-pricing-cards__price { display: flex; flex-direction: column; gap: 7px; margin: 0; }
-.eh-journey .eh-pricing-cards__price strong { font-size: clamp(38px, 3.6vw, 54px); font-weight: 550; line-height: 1.1; letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
+.eh-journey .eh-pricing-cards__price strong { font-family: 'EH Vetrino', 'Manrope', sans-serif; font-synthesis: none; color: var(--eh-accent); font-size: clamp(38px, 3.6vw, 54px); font-weight: 400; line-height: 1.1; letter-spacing: 0; font-variant-numeric: tabular-nums; }
 .eh-journey .eh-pricing-cards__price > span { color: #aebed0; font-size: 12px; }
 .eh-journey .eh-pricing-cards__commission { color: #b9c5d6; font-size: 12px; margin: 16px 0; }
 .eh-journey .eh-pricing-cards__commission strong { color: #f2dfaa; }

@@ -1,31 +1,31 @@
 /* Explicit user-approved Hero text/CTA experiment, 23 Sep.
    Reference: original Vetrino typography with selective optical blur, luminous disc CTA.
    No canvas, background, header, scroll timing or other section selectors. */
-.eh-journey .eh-hero-type-trial .eh-journey__split-title :is(.eh-journey__split-start, .eh-journey__split-end) { overflow: visible; }
+.eh-journey :is(.eh-hero-type-trial, .eh-finale-type-trial) .eh-journey__split-title :is(.eh-journey__split-start, .eh-journey__split-end) { overflow: visible; }
 /* Complementary focus masks share the exact same glyph origin and baseline. */
-.eh-journey .eh-hero-type-trial .eh-optical-letter {
+.eh-journey :is(.eh-hero-type-trial, .eh-finale-type-trial) .eh-optical-letter {
   position: relative; display: inline-block; vertical-align: baseline;
 }
-.eh-journey .eh-hero-type-trial .eh-optical-letter__base {
+.eh-journey :is(.eh-hero-type-trial, .eh-finale-type-trial) .eh-optical-letter__base {
   display: block;
   -webkit-mask-image: var(--focus-mask);
   mask-image: var(--focus-mask);
 }
-.eh-journey .eh-hero-type-trial .eh-optical-letter__echo {
+.eh-journey :is(.eh-hero-type-trial, .eh-finale-type-trial) .eh-optical-letter__echo {
   position: absolute; inset: 0; display: block; pointer-events: none;
   filter: blur(.035em);
   -webkit-mask-image: var(--blur-mask);
   mask-image: var(--blur-mask);
 }
-.eh-journey .eh-hero-type-trial .eh-optical-letter--head {
+.eh-journey :is(.eh-hero-type-trial, .eh-finale-type-trial) .eh-optical-letter--head {
   --focus-mask: linear-gradient(#0002 8%, #000 35%);
   --blur-mask: linear-gradient(#000 8%, transparent 35%);
 }
-.eh-journey .eh-hero-type-trial .eh-optical-letter--bend {
+.eh-journey :is(.eh-hero-type-trial, .eh-finale-type-trial) .eh-optical-letter--bend {
   --focus-mask: linear-gradient(150deg, #000 48%, transparent 90%);
   --blur-mask: linear-gradient(150deg, transparent 48%, #000 90%);
 }
-.eh-journey .eh-hero-type-trial .eh-optical-letter--tail {
+.eh-journey :is(.eh-hero-type-trial, .eh-finale-type-trial) .eh-optical-letter--tail {
   --focus-mask: linear-gradient(100deg, #000 20%, transparent 80%);
   --blur-mask: linear-gradient(100deg, transparent 20%, #000 80%);
 }

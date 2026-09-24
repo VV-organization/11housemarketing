@@ -77,7 +77,7 @@ export function FeatureScreenshotBrowser() {
     <dialog ref={dialog} className="eh-feature-browser__dialog" aria-labelledby="eh-feature-dialog-title" onClose={() => setZoomed(false)} onClick={(event) => { if (event.target === event.currentTarget) dialog.current?.close() }}>
       <div className="eh-feature-browser__dialog-content">
         <div className="eh-feature-browser__dialog-heading"><h3 id="eh-feature-dialog-title">{feature.caption}</h3><button type="button" onClick={() => dialog.current?.close()} autoFocus aria-label="Закрыть скриншот">Закрыть <span aria-hidden="true">×</span></button></div>
-        {zoomed && <div className="eh-feature-browser__zoom-scroll"><img src={feature.image} width={feature.imageWidth} height={feature.imageHeight} alt={feature.caption} /></div>}
+        {zoomed && <div className="eh-feature-browser__zoom-scroll"><img src={feature.image} width={feature.imageWidth} height={feature.imageHeight} style={{ maxWidth: feature.imageWidth }} alt={feature.caption} /></div>}
         <p>На узком экране скриншот можно прокрутить в стороны.</p>
       </div>
     </dialog>

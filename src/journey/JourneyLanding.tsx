@@ -168,12 +168,12 @@ export function JourneyLanding() {
           <PricingCardsSection />
           <FaqSection />
         </div>
-        <section className="eh-journey__finale eh-finale-hand-trial" id="journey-finale" tabIndex={-1} ref={finaleRef} aria-labelledby="journey-finale-title">
+        <section className="eh-journey__finale eh-finale-hand-trial eh-finale-type-trial" id="journey-finale" tabIndex={-1} ref={finaleRef} aria-labelledby="journey-finale-title">
           <div className="eh-journey__finale-stage">
             <div className="eh-finale-hand-copy">
             <h2 id="journey-finale-title" className="eh-journey__split-title">
-              <span className="eh-journey__split-start"><span>Меньше времени<br />на рутину</span></span>
-              <span className="eh-journey__split-end"><span>больше<br />на консультации</span></span>
+              <span className="eh-journey__split-start"><span><span className="eh-optical-letter eh-optical-letter--head"><span className="eh-optical-letter__base">М</span><span className="eh-optical-letter__echo" aria-hidden="true">М</span></span>еньше времен<span className="eh-optical-letter eh-optical-letter--bend"><span className="eh-optical-letter__base">и</span><span className="eh-optical-letter__echo" aria-hidden="true">и</span></span><br />на рутину</span></span>
+              <span className="eh-journey__split-end"><span>больше<br />на консультаци<span className="eh-optical-letter eh-optical-letter--tail"><span className="eh-optical-letter__base">и</span><span className="eh-optical-letter__echo" aria-hidden="true">и</span></span></span></span>
             </h2>
             <div className="eh-journey__finale-action">
               <a href="https://app.elevenhouse.ai/auth?mode=register">Начать бесплатно</a>

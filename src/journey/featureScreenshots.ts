@@ -22,7 +22,7 @@ export const featureScreenshots: readonly FeatureScreenshot[] = [
     title: 'Встреча начинается с удобной записи',
     description: 'Видите свою неделю, данные клиента и детали консультации в одном календаре.',
     steps: ['Настройте доступное время', 'Получите запись в календаре', 'Откройте встречу и начните консультацию'],
-    image: screenshot('eh-p01-calendar'), caption: 'Экран календаря ElevenHouse', imageWidth: 1800, imageHeight: 1024,
+    image: `${import.meta.env.BASE_URL}assets/feature-screenshots/eh-calendar-retina.png`, caption: 'Экран календаря ElevenHouse', imageWidth: 4536, imageHeight: 2580,
     note: 'Календарь и онлайн-запись входят в бесплатный тариф.',
   },
   {
@@ -38,7 +38,7 @@ export const featureScreenshots: readonly FeatureScreenshot[] = [
     title: 'Не переключайтесь между расчётами',
     description: 'Западная и ведическая астрология, нумерология, матрица судьбы и Human Design — в одном рабочем пространстве.',
     steps: ['Выберите систему расчёта', 'Введите данные клиента', 'Изучите результат и подготовьте разбор'],
-    image: screenshot('eh-p07-numerology'), caption: 'Пример расчёта: нумерология', imageWidth: 1800, imageHeight: 1024,
+    image: `${import.meta.env.BASE_URL}assets/feature-screenshots/eh-numerology-retina.png`, caption: 'Пример расчёта: нумерология', imageWidth: 4536, imageHeight: 2580,
     note: 'Все расчёты, свои трактовки и PDF-отчёты доступны на Start.',
   },
   {
@@ -46,7 +46,7 @@ export const featureScreenshots: readonly FeatureScreenshot[] = [
     title: 'Ваши знания становятся услугой',
     description: 'Соберите предложения для клиентов: консультации, пакеты, подписки и платные материалы.',
     steps: ['Создайте услугу', 'Укажите формат и стоимость', 'Разместите на личной странице'],
-    image: `${import.meta.env.BASE_URL}assets/feature-screenshots/eh-products-updated.png`, caption: 'Каталог продуктов ElevenHouse', imageWidth: 6677, imageHeight: 3786,
+    image: `${import.meta.env.BASE_URL}assets/feature-screenshots/eh-products-retina.png`, caption: 'Каталог продуктов ElevenHouse', imageWidth: 4536, imageHeight: 2580,
     note: 'Конструктор услуг и личная страница входят в Start.',
   },
   {
@@ -70,7 +70,7 @@ export const featureScreenshots: readonly FeatureScreenshot[] = [
     title: 'Поручите рутину системе',
     description: 'AI помогает с черновиками разборов и ответов. Воронки связывают повторяющиеся действия в ваш сценарий.',
     steps: ['Определите последовательность действий', 'Настройте нужные условия', 'Проверяйте AI-черновики перед использованием'],
-    image: screenshot('eh-p04-funnel'), caption: 'Конструктор воронки: пример настройки', imageWidth: 1800, imageHeight: 1024,
+    image: `${import.meta.env.BASE_URL}assets/feature-screenshots/eh-funnel-retina.png`, caption: 'Конструктор воронки: пример настройки', imageWidth: 4536, imageHeight: 2580,
     note: 'AI и свои сценарии доступны в Team Pro и Studio. На экране — настройка воронки, не результат AI.',
   },
   {
@@ -78,7 +78,7 @@ export const featureScreenshots: readonly FeatureScreenshot[] = [
     title: 'Материалы тоже работают на вашу практику',
     description: 'Храните и предлагайте клиентам платные материалы. В подписке добавляются контент-план и публикации по расписанию.',
     steps: ['Подготовьте материал', 'Добавьте его как продукт', 'Предложите клиентам на личной странице'],
-    image: `${import.meta.env.BASE_URL}assets/feature-screenshots/eh-course-detail.png`, caption: 'Конструктор мини-курса: материалы и доступы', imageWidth: 1080, imageHeight: 790,
+    image: `${import.meta.env.BASE_URL}assets/feature-screenshots/eh-course-retina.png`, caption: 'Конструктор мини-курса: материалы и доступы', imageWidth: 3234, imageHeight: 2799,
     note: 'На экране — настройка курса и превью для клиента.',
   },
   {
@@ -86,7 +86,7 @@ export const featureScreenshots: readonly FeatureScreenshot[] = [
     title: 'Понимайте, что происходит в практике',
     description: 'Следите за продажами и оплатами, не собирая каждый раз отдельную таблицу.',
     steps: ['Откройте финансовый раздел', 'Проверьте операции и баланс', 'Посмотрите результаты работы'],
-    image: screenshot('eh-p03-finance'), caption: 'Финансовый раздел ElevenHouse', imageWidth: 1800, imageHeight: 1024,
+    image: `${import.meta.env.BASE_URL}assets/feature-screenshots/eh-finance-retina.png`, caption: 'Финансовый раздел ElevenHouse', imageWidth: 4536, imageHeight: 2580,
     note: 'Аналитика и история продаж доступны на Start. На скриншоте — кабинет без операций.',
   },
 ]
