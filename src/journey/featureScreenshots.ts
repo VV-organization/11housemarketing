@@ -46,7 +46,7 @@ export const featureScreenshots: readonly FeatureScreenshot[] = [
     title: 'Ваши знания становятся услугой',
     description: 'Соберите предложения для клиентов: консультации, пакеты, подписки и платные материалы.',
     steps: ['Создайте услугу', 'Укажите формат и стоимость', 'Разместите на личной странице'],
-    image: `${import.meta.env.BASE_URL}assets/feature-screenshots/eh-products-retina.png`, caption: 'Каталог продуктов ElevenHouse', imageWidth: 4536, imageHeight: 2580,
+    image: `${import.meta.env.BASE_URL}assets/feature-screenshots/eh-products-retina.png`, caption: 'Каталог продуктов ElevenHouse', imageWidth: 6677, imageHeight: 3786,
     note: 'Конструктор услуг и личная страница входят в Start.',
   },
   {
