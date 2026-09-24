@@ -2,7 +2,7 @@
 .eh-journey .eh-feature-copy-editorial .eh-feature-browser__description { color: #becbde; }
 .eh-journey .eh-feature-copy-editorial .eh-feature-browser__description strong {
   color: #f6e4ad; font-weight: 550;
-  text-decoration: underline; text-decoration-color: #d9be6b70; text-underline-offset: 5px; text-decoration-thickness: 1px;
+  text-decoration: none;
 }
 .eh-journey .eh-feature-copy-editorial .eh-feature-browser__steps { gap: 0; margin-top: 22px; }
 .eh-journey .eh-feature-copy-editorial .eh-feature-browser__steps li {
