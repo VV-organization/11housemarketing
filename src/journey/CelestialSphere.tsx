@@ -8,6 +8,7 @@ export function CelestialSphere() {
   useEffect(() => {
     const element = host.current
     if (!element) return
+    let disposed = false
     let renderer: THREE.WebGLRenderer
     try { renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' }) }
     catch { return }
@@ -15,6 +16,8 @@ export function CelestialSphere() {
     renderer.setClearColor(0x000000, 0)
     renderer.toneMapping = THREE.ACESFilmicToneMapping
     renderer.toneMappingExposure = .9
+    renderer.domElement.style.opacity = '0'
+    renderer.domElement.style.transition = 'opacity .65s ease'
     element.appendChild(renderer.domElement)
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(36, 1, .1, 40)
@@ -49,7 +52,7 @@ export function CelestialSphere() {
     // Low-opacity concentric shells soften the luminous edge without a full-screen bloom pass.
     const goldHalo = new THREE.MeshBasicMaterial({ color: 0xffd784, transparent: true, opacity: .07, blending: THREE.AdditiveBlending, depthWrite: false })
     const blueHalo = new THREE.MeshBasicMaterial({ color: 0xbce7ff, transparent: true, opacity: .07, blending: THREE.AdditiveBlending, depthWrite: false })
-    const core = createCrystalCore()
+    const core = createCrystalCore(() => { if (!disposed) resume() })
     pointerRig.add(core.group)
     const ring = (parent: THREE.Group, radius: number, thickness: number, material: THREE.Material) => {
       const mesh = new THREE.Mesh(new THREE.TorusGeometry(radius, thickness, 16, 256), material)
@@ -150,6 +153,10 @@ export function CelestialSphere() {
       })
       core.update(elapsed)
       renderer.render(scene, camera)
+      if (core.ready) {
+        renderer.domElement.style.transitionDuration = reduced() ? '0s' : '.65s'
+        renderer.domElement.style.opacity = '1'
+      }
       if (!reduced()) frame = requestAnimationFrame(render)
     }
     const resume = () => { cancelAnimationFrame(frame); last = 0; render() }
@@ -165,6 +172,7 @@ export function CelestialSphere() {
     document.addEventListener('visibilitychange', resume)
     render()
     return () => {
+      disposed = true
       pointerArea.removeEventListener('pointermove', onPointerMove)
       pointerArea.removeEventListener('pointerleave', resetPointer)
       window.removeEventListener('blur', resetPointer)

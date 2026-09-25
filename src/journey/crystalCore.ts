@@ -1,10 +1,16 @@
 import * as THREE from 'three'
 
 /** Volumetric, deforming optical shell. The approved artwork is its surface material. */
-export function createCrystalCore() {
+export function createCrystalCore(onReady: () => void) {
   const group = new THREE.Group()
   const timeUniform = { value: 0 }
-  const atlas = new THREE.TextureLoader().load(`${import.meta.env.BASE_URL}assets/celestial-crystal-core.png`)
+  let ready = false
+  const atlas = new THREE.TextureLoader().load(
+    `${import.meta.env.BASE_URL}assets/celestial-crystal-core.webp`,
+    () => { ready = true; onReady() },
+    undefined,
+    () => { group.visible = false; ready = true; onReady() },
+  )
   atlas.colorSpace = THREE.SRGBColorSpace
   atlas.anisotropy = 8
   const material = new THREE.MeshBasicMaterial({ map: atlas, toneMapped: false })
@@ -52,6 +58,7 @@ export function createCrystalCore() {
   group.add(shell)
   return {
     group,
+    get ready() { return ready },
     dispose() { atlas.dispose() },
     update(time: number) {
       timeUniform.value=time
