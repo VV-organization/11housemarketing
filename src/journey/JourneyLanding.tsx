@@ -6,7 +6,6 @@ import { PractitionerResults } from '../sections/PractitionerResults'
 import { PricingCardsSection } from '../sections/PricingCardsSection'
 import { FaqSection } from '../sections/FaqSection'
 import { ProductExperience } from './ProductExperience'
-import { FinaleHand } from './FinaleHand'
 import './finaleHand.css'
 import { FinaleFooter } from './FinaleFooter'
 import { JourneySceneAdapter } from './JourneySceneAdapter'
@@ -19,6 +18,9 @@ import './visualSystem.css'
 import './copyAlignment.css'
 import './sectionLayout.css'
 import './heroTypeTrial.css'
+import './finaleEditorial.css'
+import { CelestialSphere } from './CelestialSphere'
+import './openingEditorial.css'
 
 // Keep the section available for a later launch without mounting its animations.
 const showPractitionerResults = false
@@ -84,7 +86,11 @@ export function JourneyLanding() {
     }
     const update = () => {
       const y = window.scrollY
-      root.dataset.reading = y > intro.offsetHeight * 0.6 && y < layout.finaleTop ? 'true' : 'false'
+      const headerHeight = root.querySelector('.landing-header')?.getBoundingClientRect().height ?? 96
+      const atFinale = y + headerHeight >= layout.finaleTop - 1
+      root.dataset.finale = String(atFinale)
+      root.style.setProperty('--finale-header-clearance', `${headerHeight}px`)
+      root.dataset.reading = y > intro.offsetHeight * 0.6 && !atFinale ? 'true' : 'false'
       scrollAdapter.setTarget(sampleJourneyScene(y, layout))
       const introProgress = clamp01(y / Math.max(1, intro.offsetHeight - window.innerHeight))
       intro.style.setProperty('--opening-opacity', String(1 - clamp01((introProgress - 0.6) / 0.4)))
@@ -148,16 +154,18 @@ export function JourneyLanding() {
       <LandingHeader onNavigate={navigate} destinations={navigationTargets} />
       <a className="eh-journey__skip" href="#journey-access">Перейти к знакомству с приложением</a>
       <main className="eh-journey__story">
-        <section id="top" tabIndex={-1} className="eh-journey__opening eh-hero-type-trial" ref={introRef} aria-labelledby="journey-title">
+        <section id="top" tabIndex={-1} className="eh-journey__opening eh-hero-type-trial eh-opening-editorial" ref={introRef} aria-labelledby="journey-title">
           <div className="eh-journey__opening-stage">
+            <div className="eh-opening-editorial__copy">
             <h1 id="journey-title" className="eh-journey__split-title">
               <span className="eh-journey__split-start"><span><span className="eh-optical-letter eh-optical-letter--head"><span className="eh-optical-letter__base">В</span><span className="eh-optical-letter__echo" aria-hidden="true">В</span></span>ся практик<span className="eh-optical-letter eh-optical-letter--bend"><span className="eh-optical-letter__base">а</span><span className="eh-optical-letter__echo" aria-hidden="true">а</span></span><br />астролога</span></span>
-              <span className="eh-journey__split-end"><span>в одном<br />приложени<span className="eh-optical-letter eh-optical-letter--tail"><span className="eh-optical-letter__base">и</span><span className="eh-optical-letter__echo" aria-hidden="true">и</span></span></span></span>
+              <span className="eh-journey__split-end"><span>в одном приложени<span className="eh-optical-letter eh-optical-letter--tail"><span className="eh-optical-letter__base">и</span><span className="eh-optical-letter__echo" aria-hidden="true">и</span></span></span></span>
             </h1>
-            <a className="eh-journey__start" href="https://app.elevenhouse.ai/auth?mode=register">
-              Начать бесплатно
-            </a>
-            <p className="eh-journey__opening-description">Карты, клиенты, запись, оплаты и AI-помощник — чтобы меньше заниматься рутиной и больше консультировать.<small className="eh-opening-free-note">Бесплатный тариф без ограничения по времени</small></p>
+            <p className="eh-journey__opening-description">Карты, клиенты, запись, оплаты и AI-помощник — чтобы меньше заниматься рутиной и больше консультировать.</p>
+            <a className="eh-journey__start" href="https://app.elevenhouse.ai/auth?mode=register">Начать бесплатно</a>
+            <p className="eh-opening-free-note">Бесплатный тариф без ограничения по времени</p>
+            </div>
+            <CelestialSphere />
             <a className="eh-journey__explore" href="#journey-access" aria-label="Посмотреть возможности ElevenHouse"><span className="eh-journey__explore-label">Посмотреть возможности</span><span aria-hidden="true">↓</span></a>
           </div>
         </section>
@@ -168,7 +176,7 @@ export function JourneyLanding() {
           <PricingCardsSection />
           <FaqSection />
         </div>
-        <section className="eh-journey__finale eh-finale-hand-trial eh-finale-type-trial" id="journey-finale" tabIndex={-1} ref={finaleRef} aria-labelledby="journey-finale-title">
+        <section className="eh-journey__finale eh-finale-hand-trial eh-finale-type-trial eh-finale-editorial" id="journey-finale" tabIndex={-1} ref={finaleRef} aria-labelledby="journey-finale-title">
           <div className="eh-journey__finale-stage">
             <div className="eh-finale-hand-copy">
             <h2 id="journey-finale-title" className="eh-journey__split-title">
@@ -176,10 +184,10 @@ export function JourneyLanding() {
               <span className="eh-journey__split-end"><span>больше<br />на консультаци<span className="eh-optical-letter eh-optical-letter--tail"><span className="eh-optical-letter__base">и</span><span className="eh-optical-letter__echo" aria-hidden="true">и</span></span></span></span>
             </h2>
             <div className="eh-journey__finale-action">
-              <a href="https://app.elevenhouse.ai/auth?mode=register">Начать бесплатно</a>
+              <a className="eh-journey__start" href="https://app.elevenhouse.ai/auth?mode=register">Начать бесплатно</a>
+            <p className="eh-finale-editorial__subtitle">Ведите практику в одном кабинете с помощью Eleven House</p>
             </div>
             </div>
-            <FinaleHand reducedMotion={reducedMotion} />
             <FinaleFooter />
           </div>
         </section>

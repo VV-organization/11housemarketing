@@ -14,7 +14,7 @@ describe('workflow transformation', () => {
   it('provides a real registration action and complete readable copy before animation', () => {
     const html = renderToStaticMarkup(<OneClientStory />)
     expect(html).toContain('https://app.elevenhouse.ai/auth?mode=register')
-    expect(html).toContain('Не ещё один сервис.')
+    expect(html).toContain('Все инструменты практики — в одной системе')
     expect(html).toContain('Переписка, данные и заметки рядом')
   })
 })

@@ -1,0 +1,52 @@
+/* User reference: left editorial copy + a single large astrological sphere. */
+.eh-journey #top.eh-opening-editorial .eh-journey__opening-stage {
+  display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 2vw;
+  padding: 120px 4vw 100px; isolation: isolate;
+}
+.eh-journey #top.eh-opening-editorial .eh-journey__opening-stage::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, #030917ed, #030917c9 38%, #03091799 65%, #030917b3);
+}
+.eh-journey #top .eh-opening-editorial__copy { position: relative; z-index: 1; }
+.eh-journey #top.eh-opening-editorial :is(.eh-journey__split-start, .eh-journey__split-end) {
+  position: static; display: block; max-width: none; margin: 0; padding-bottom: .1em;
+  font-family: 'EH Vetrino', serif; font-weight: 400; font-size: clamp(40px, 4.9vw, 80px); line-height: 1.08; text-align: left; letter-spacing: -.04em;
+}
+.eh-journey #top.eh-opening-editorial .eh-journey__split-end { color: #e2ca79; }
+.eh-journey #top.eh-opening-editorial .eh-journey__opening-description {
+  position: static; width: min(100%, 480px); margin: 24px 0 28px; font-size: 16px; line-height: 1.65;
+}
+.eh-journey #top.eh-opening-editorial .eh-journey__start {
+  position: static; transform: none; scale: none; width: auto; height: auto; min-height: 54px;
+  padding: 17px 30px; border: 1px solid #e2ca79b8; border-radius: 999px;
+  background: #e2ca791a; box-shadow: none; font-size: 12px; letter-spacing: .06em;
+}
+.eh-journey #top.eh-opening-editorial .eh-journey__start:hover { background: #e2ca792e; }
+.eh-journey #top.eh-opening-editorial .eh-journey__start::before,
+.eh-journey #top.eh-opening-editorial .eh-journey__start::after { content: none; }
+.eh-journey #top .eh-opening-free-note { margin: 14px 0 0; font-size: 12px; color: #b9c7d8; }
+.eh-journey #top .eh-celestial-sphere { display: block; width: 100%; max-height: 72svh; overflow: visible; }
+@media (max-width: 760px) {
+  .eh-journey #top.eh-opening-editorial .eh-journey__opening-stage {
+    grid-template-columns: 1fr; height: auto; min-height: 100svh; padding: 112px 24px 100px; gap: 20px;
+  }
+  .eh-journey #top.eh-opening-editorial :is(.eh-journey__split-start, .eh-journey__split-end) { font-size: clamp(32px, 7.6vw, 54px); }
+  .eh-journey #top.eh-opening-editorial .eh-journey__opening-description { font-size: 14px; margin: 16px 0 22px; }
+  .eh-journey #top .eh-celestial-sphere { max-height: 330px; }
+}
+.eh-journey #top .eh-celestial-sphere { aspect-ratio: 1; }
+.eh-journey #top .eh-celestial-sphere canvas { display: block; width: 100%; height: 100%; }
+
+/* Larger desktop copy fills the left column while respecting short viewports. */
+@media (min-width: 761px) {
+  .eh-journey #top.eh-opening-editorial :is(.eh-journey__split-start, .eh-journey__split-end) {
+    font-size: clamp(40px, min(5.8vw, 10.4svh), 96px);
+  }
+  .eh-journey #top.eh-opening-editorial .eh-journey__opening-description {
+    width: min(100%, 560px); font-size: 18px; margin: 28px 0 30px;
+  }
+  .eh-journey #top.eh-opening-editorial .eh-journey__start {
+    min-height: 60px; padding: 19px 34px; font-size: 13px;
+  }
+  .eh-journey #top .eh-opening-free-note { margin-top: 16px; font-size: 13px; }
+}

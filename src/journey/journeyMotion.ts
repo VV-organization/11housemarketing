@@ -20,12 +20,9 @@ export function sampleJourneyScene(scrollY: number, layout: JourneyLayout) {
   for (const start of layout.chapterStarts.slice(1)) {
     flightPosition += smooth(start - viewport * 0.6, start + viewport * 0.1, y) * 760
   }
-  // Prepare the tunnel behind the opaque FAQ, before the finale enters at the
-  // bottom of the viewport. The extra lead lets the scene inertia settle.
-  const finale = smooth(layout.finaleTop - viewport * 2, layout.finaleTop - viewport * 1.15, y)
-  flightPosition += finale * 1800
+  // Keep the reading scene through the finale; no second tunnel transition.
   return {
-    sceneProgress: 2.4 * intro + 3.92 * finale,
+    sceneProgress: 2.4 * intro,
     flightPosition,
   }
 }

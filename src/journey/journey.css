@@ -210,13 +210,3 @@
 @media (prefers-reduced-motion: reduce) {
   .eh-journey :where(button, a) { transition: none; }
 }
-
-/* Finale-only curtain: translate the existing scene with the complete incoming
-   stage. These overrides are inactive throughout the opening and CRM chapters. */
-.eh-journey[data-finale-curtain="true"] > .cosmic-runway[data-background-only] {
-  transform: translate3d(0, var(--finale-curtain-offset), 0);
-}
-.eh-journey[data-finale-curtain="true"] .eh-journey__commercial {
-  transform: translate3d(0, var(--finale-curtain-hold), 0);
-  clip-path: inset(0 0 var(--finale-curtain-hold) 0);
-}

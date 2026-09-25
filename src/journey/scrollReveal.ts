@@ -6,8 +6,6 @@ const revealSelector = [
   '.eh-feature-browser__figure',
   '.pricing-section__heading > *',
   '.pricing-motion-stage',
-  '.faq-section > header',
-  '.faq-section__list > details',
 ].join(',')
 
 export function attachScrollReveal(root: HTMLElement) {

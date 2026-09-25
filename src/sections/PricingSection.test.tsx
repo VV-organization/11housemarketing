@@ -152,7 +152,7 @@ describe('PricingSection', () => {
     expect(html).not.toContain('class="pricing-details"')
     expect(html).not.toContain('pricing-section__note')
     expect(html).toContain('aria-label="Тариф Team Pro"')
-    expect(html).toMatch(/class="pricing-card-action"[^>]*href="https:\/\/app\.elevenhouse\.ai\/auth\?mode=register"[^>]*>Начать с бесплатного<\/a>/)
+    expect(html).toMatch(/class="pricing-card-action"[^>]*href="https:\/\/app\.elevenhouse\.ai\/auth\?mode=register"[^>]*>Начать бесплатно<\/a>/)
     expect(html).toContain('1 специалист · 1 ГБ*')
     expect(html).toContain('С брендом ElevenHouse. Без AI.')
     expect(html).toContain('До 10 специалистов · 100 ГБ*')

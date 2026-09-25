@@ -1,0 +1,150 @@
+.eh-journey .eh-finale-editorial .eh-journey__start {
+  width: clamp(128px, 12vw, 178px); height: clamp(128px, 12vw, 178px);
+  min-width: 0; min-height: 0; padding: 22px;
+  border: 0; border-radius: 50%;
+  isolation: isolate; overflow: visible;
+  background: rgba(5, 7, 14, .78);
+  color: #fff9e9;
+  font-size: 11px; line-height: 1.4; letter-spacing: -.015em;
+  box-shadow: -7px 12px 20px -9px rgba(0, 0, 0, .75);
+  transition: background .35s, scale .35s;
+}
+.eh-journey .eh-finale-editorial .eh-journey__start:hover {
+  background: rgba(226, 202, 121, .16);
+  scale: 1.045;
+}
+/* A second luminous disc sits behind the face; their intersections form tapered tips. */
+.eh-journey .eh-finale-editorial .eh-journey__start::before {
+  content: ''; position: absolute; inset: -46%; pointer-events: none; z-index: -1;
+  background: url('../assets/hero-button-trail.svg') center / 100% 100% no-repeat;
+  /* Blur outside the SVG viewport: WebKit must not clip the glow's filter surface. */
+  filter: blur(3.6px);
+  overflow: visible;
+}
+.eh-journey .eh-finale-editorial .eh-journey__start::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: -1;
+  border-radius: 50%;
+  /* Explicit circular clipping keeps WebKit backdrop sampling off the rectangular layer edges. */
+  clip-path: circle(50%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+}
+.eh-journey .eh-finale-editorial .eh-journey__start:focus-visible { outline: 2px solid #e4ce87; outline-offset: 8px; }
+@media (min-width:701px) and (max-height:760px) {
+  .eh-journey .eh-finale-editorial .eh-journey__start { width: 124px; height: 124px; }
+}
+@media (max-width:700px) {
+  .eh-journey .eh-finale-editorial .eh-journey__start { width: 106px; height: 106px; font-size: 10px; padding: 15px; top: 43%; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .eh-journey .eh-finale-editorial .eh-journey__start { transition: none; }
+}
+.eh-journey[data-motion="reduced"] .eh-finale-editorial .eh-journey__start { transition: none; }
+
+/* Supplied diagonal closing composition, with the approved optical lettering. */
+.eh-journey #journey-finale.eh-finale-editorial .eh-journey__finale-stage {
+  display: flex; flex-direction: column; align-items: stretch;
+  height: auto; min-height: 100svh; padding: 112px 4vw 20px; gap: 24px;
+  overflow: visible;
+}
+.eh-journey .eh-finale-editorial .eh-finale-hand-copy { position: relative; min-height: 660px; }
+.eh-journey .eh-finale-editorial .eh-journey__split-title { font-family: 'EH Vetrino', serif; }
+.eh-journey .eh-finale-editorial :is(.eh-journey__split-start, .eh-journey__split-end) {
+  position: absolute; margin: 0; max-width: none;
+  font-size: clamp(42px, 7.1vw, 116px); line-height: 1.04;
+  color: #f0eff7;
+}
+.eh-journey .eh-finale-editorial .eh-journey__split-start { top: 0; left: 0; text-align: left; }
+.eh-journey .eh-finale-editorial .eh-journey__split-end { bottom: 0; right: 0; text-align: right; }
+.eh-journey .eh-finale-editorial .eh-journey__finale-action {
+  position: absolute; inset: 0; margin: 0; transform: none; pointer-events: none;
+}
+.eh-journey .eh-finale-editorial .eh-journey__finale-action .eh-journey__start {
+  display: inline-flex; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: auto;
+}
+.eh-journey .eh-finale-editorial__subtitle {
+  margin: 8px 0 20px; text-align: center; color: #d0d8e6; font-size: clamp(16px, 1.5vw, 22px); line-height: 1.5;
+}
+@media (max-width: 760px) {
+  .eh-journey #journey-finale.eh-finale-editorial .eh-journey__finale-stage { padding: 100px 24px 24px; }
+  .eh-journey .eh-finale-editorial .eh-finale-hand-copy { min-height: 470px; }
+  .eh-journey .eh-finale-editorial :is(.eh-journey__split-start, .eh-journey__split-end) { font-size: clamp(28px, 6.8vw, 52px); }
+}
+
+/* Fit the complete desktop closing composition, including footer, in one viewport. */
+@media (min-width: 761px) {
+  .eh-journey #journey-finale.eh-finale-editorial .eh-journey__finale-stage {
+    min-height: 100svh;
+    height: auto;
+    padding: 108px 4vw 16px;
+    gap: 14px;
+  }
+  .eh-journey .eh-finale-editorial .eh-finale-hand-copy {
+    min-height: clamp(330px, calc(100svh - 330px), 700px);
+  }
+  .eh-journey .eh-finale-editorial :is(.eh-journey__split-start, .eh-journey__split-end) {
+    font-size: clamp(40px, min(6.4vw, 9svh), 100px);
+    line-height: 1.02;
+  }
+  .eh-journey .eh-finale-editorial .eh-journey__finale-action .eh-journey__start {
+    width: clamp(106px, 17svh, 150px);
+    height: clamp(106px, 17svh, 150px);
+  }
+  .eh-journey .eh-finale-editorial__subtitle { margin: 0; font-size: clamp(15px, 2.2svh, 20px); }
+  .eh-journey .eh-finale-editorial .eh-finale-footer { padding-block: 14px; }
+}
+
+/* Keep the supporting copy attached to the central call to action. */
+.eh-journey .eh-finale-editorial .eh-journey__finale-action {
+  inset: auto; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+  width: 290px; white-space: normal;
+}
+.eh-journey .eh-finale-editorial .eh-journey__finale-action .eh-journey__start {
+  position: relative; top: auto; left: auto; transform: none; flex-shrink: 0;
+}
+.eh-journey .eh-finale-editorial .eh-journey__finale-action .eh-finale-editorial__subtitle {
+  margin: 0; max-width: 280px; font-size: 14px; line-height: 1.55; text-wrap: balance;
+}
+@media (max-width: 760px) {
+  .eh-journey .eh-finale-editorial .eh-journey__finale-action { left: 50%; top: 50%; width: 260px; gap: 14px; }
+  .eh-journey .eh-finale-editorial .eh-journey__finale-action .eh-finale-editorial__subtitle { font-size: 13px; }
+}
+.eh-journey .eh-finale-editorial .eh-journey__finale-action .eh-journey__start { white-space: nowrap; }
+.eh-journey .eh-finale-editorial .eh-journey__finale-action .eh-finale-editorial__subtitle {
+  color: #e0e5ed; text-shadow: 0 2px 6px #030917, 0 0 14px #030917;
+}
+
+/* The finale follows the same section spacing as the preceding content. */
+.eh-journey #journey-finale.eh-finale-editorial .eh-journey__finale-stage { padding-top: 28px; }
+.eh-journey #journey-commercial .faq-section { min-height: 0; }
+@media (min-width: 1001px) and (max-height: 850px) {
+  .eh-journey #journey-finale.eh-finale-editorial .eh-journey__finale-stage { padding-top: 16px; }
+}
+@media (max-width: 1000px) {
+  .eh-journey #journey-finale.eh-finale-editorial .eh-journey__finale-stage { padding-top: 40px; }
+}
+
+/* At the natural end of the document, center the finale below the fixed header. */
+@media (min-width: 761px) {
+  .eh-journey #journey-finale.eh-finale-editorial .eh-journey__finale-stage {
+    min-height: calc(100svh - 96px);
+    justify-content: center;
+  }
+  .eh-journey .eh-finale-editorial .eh-finale-hand-copy {
+    min-height: clamp(330px, calc(100svh - 330px), 700px);
+  }
+}
+@media (max-width: 760px) {
+  .eh-journey #journey-finale.eh-finale-editorial .eh-journey__finale-stage {
+    min-height: calc(100svh - 88px);
+  }
+}
+.eh-journey #journey-finale.eh-finale-editorial .eh-journey__finale-stage { padding-top: 50px; }
+
+/* Let the shared stars continue behind navigation at the closing screen. */
+.eh-journey[data-finale="true"] > .landing-header { background: transparent; }
+.eh-journey[data-finale="true"] #journey-commercial {
+  clip-path: inset(0 0 var(--finale-header-clearance, 96px) 0);
+}

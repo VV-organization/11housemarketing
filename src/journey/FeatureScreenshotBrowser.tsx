@@ -70,7 +70,6 @@ export function FeatureScreenshotBrowser() {
         <button type="button" className="eh-feature-browser__screen" onClick={enlarge} aria-label={`Увеличить: ${feature.caption}`} aria-haspopup="dialog">
           <img src={feature.image} width={feature.imageWidth} height={feature.imageHeight} alt={feature.caption} loading="lazy" decoding="async" />
         </button>
-        <figcaption><span>{feature.caption}</span><button type="button" onClick={enlarge} aria-haspopup="dialog">Увеличить экран</button></figcaption>
       </figure>
     </div>
 

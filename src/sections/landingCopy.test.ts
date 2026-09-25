@@ -95,7 +95,7 @@ describe('marketing brief copy contract', () => {
     expect(clientStorySource).not.toContain('client-story__title-part')
     expect(clientStorySource).not.toContain('client-story__header')
     expect(clientStorySource).toContain('Меньше рутины.')
-    expect(clientStorySource).toContain('Больше времени<br />на клиентов.')
+    expect(clientStorySource).toContain('Больше времени на клиентов.')
   })
 
   it('shows four setup steps followed by five benefit-led product screens', () => {
@@ -206,7 +206,7 @@ describe('marketing brief copy contract', () => {
 
     const journeyPosition = journeySource.indexOf('<ProductExperience ')
     const resultsPosition = journeySource.indexOf('<PractitionerResults />')
-    const pricingPosition = journeySource.indexOf('<PricingSection />')
+    const pricingPosition = journeySource.indexOf('<PricingCardsSection />')
     expect(journeyPosition).toBeGreaterThan(-1)
     expect(journeyPosition).toBeLessThan(resultsPosition)
     expect(resultsPosition).toBeLessThan(pricingPosition)
@@ -225,7 +225,7 @@ describe('marketing brief copy contract', () => {
     expect(clientStorySource).not.toContain('<WorkflowMetrics')
     expect(clientStorySource).toContain('aria-controls={`eh-workflow-result-${index}`}')
     expect(journeySource.indexOf('<OneClientStory />')).toBeGreaterThan(journeySource.indexOf('<ProductExperience '))
-    expect(journeySource.indexOf('<OneClientStory />')).toBeLessThan(journeySource.indexOf('<PricingSection />'))
+    expect(journeySource.indexOf('<OneClientStory />')).toBeLessThan(journeySource.indexOf('<PricingCardsSection />'))
   })
 
   it('contains the six FAQ questions from the supplied reference', () => {

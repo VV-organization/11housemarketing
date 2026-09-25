@@ -23,20 +23,12 @@ describe('journey scroll separation', () => {
     expect(a.flightPosition - b.flightPosition).toBeLessThan(0)
   })
 
-  it('keeps the tunnel out of CRM and prepares it behind the end of FAQ', () => {
-    for (const y of [1400, 4000, 6600, 9000, 10400]) {
-      expect(sampleJourneyScene(y, layout).sceneProgress).toBeLessThan(4.72)
-    }
-    expect(sampleJourneyScene(12800, layout).sceneProgress).toBeCloseTo(6.32)
-    expect(sampleJourneyScene(30000, layout).sceneProgress).toBeCloseTo(6.32)
-  })
-
-  it('has the full tunnel ready before any part of the finale enters the viewport', () => {
+  it('keeps the same star scene through FAQ and the finale', () => {
     for (const viewport of [600, 800, 1100]) {
       const resized = { ...layout, viewport }
-      const firstVisible = layout.finaleTop - viewport
-      for (const y of [firstVisible, firstVisible + 1, layout.finaleTop, layout.finaleTop + viewport]) {
-        expect(sampleJourneyScene(y, resized).sceneProgress).toBeCloseTo(6.32)
+      const reading = sampleJourneyScene(9000, resized)
+      for (const y of [10400, 11200, 12000, 12800, 30000]) {
+        expect(sampleJourneyScene(y, resized)).toEqual(reading)
       }
     }
   })

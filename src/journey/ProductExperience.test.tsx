@@ -15,9 +15,10 @@ describe('feature screenshot navigation', () => {
   it('shows useful content and a real screenshot before any interaction', () => {
     const html = render().split('id="journey-workspace"')[1]
     expect(html).toContain('Встреча начинается с удобной записи')
-    expect(html).toContain('Настройте доступное время')
-    expect(html).toContain('eh-p01-calendar.webp')
-    expect(html).toContain('Увеличить экран')
+    expect(html.replace(/<[^>]*>/g, '')).toContain('Настройте доступное время')
+    expect(html).toContain('eh-calendar-retina.png')
+    expect(html).toContain('aria-haspopup="dialog"')
+    expect(html).not.toContain('<figcaption')
     expect(html).not.toContain('Все возможности')
     expect(html).not.toContain('eh-walkthrough')
   })

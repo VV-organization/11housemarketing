@@ -19,8 +19,6 @@
 .eh-journey .eh-feature-browser__screen { position: relative; display: block; padding: 0; width: 100%; aspect-ratio: 1800 / 1024; overflow: hidden; border: 1px solid rgba(161, 186, 220, .32); border-radius: 16px; background: #0b0b1f; cursor: zoom-in; box-shadow: 0 24px 56px -32px #000b; }
 .eh-journey .eh-feature-browser__screen > img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .eh-journey .eh-feature-browser__zoom-icon { display: grid; place-items: center; position: absolute; bottom: 12px; right: 12px; width: 34px; height: 34px; border: 1px solid #e2ca7955; border-radius: 9px; color: #f5e6bd; background: #071221ed; font-size: 21px; }
-.eh-journey .eh-feature-browser__figure figcaption { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px 16px; margin-top: 12px; padding: 6px 12px; border-radius: 10px; background: rgba(3, 9, 23, .92); color: var(--eh-muted); font-size: 12px; line-height: 1.5; }
-.eh-journey .eh-feature-browser__figure figcaption button { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0; border: 0; background: transparent; color: #e2ca79; font: inherit; white-space: nowrap; cursor: pointer; }
 .eh-journey .eh-feature-browser__dialog { width: min(1500px, calc(100vw - 48px)); max-width: none; max-height: calc(100dvh - 48px); padding: 0; margin: auto; overflow: auto; overscroll-behavior: contain; border: 1px solid #e2ca7966; border-radius: 18px; background: #071221; color: var(--eh-ink); }
 .eh-journey .eh-feature-browser__dialog::backdrop { background: rgba(1, 5, 14, .92); }
 .eh-journey .eh-feature-browser__dialog-content { padding: 18px; }
@@ -49,7 +47,6 @@
   .eh-journey .eh-feature-browser__steps { margin-top: 24px; }
   .eh-journey .eh-feature-browser__note { margin-top: 22px; }
   .eh-journey .eh-feature-browser__screen { border-radius: 12px; }
-  .eh-journey .eh-feature-browser__figure figcaption { font-size: 11px; }
   .eh-journey .eh-feature-browser__dialog { width: calc(100vw - 24px); max-height: calc(100dvh - 24px); }
   .eh-journey .eh-feature-browser__dialog-content { padding: 12px; }
   .eh-journey .eh-feature-browser__dialog-heading { align-items: flex-start; }
@@ -63,13 +60,13 @@
   .eh-journey .eh-feature-browser__tab { transition: none; }
 }
 
-/* Match description and screenshot frames; keep the caption in its own row. */
+/* Match description and screenshot frames in a single row. */
 @media (min-width: 1001px) {
-  .eh-journey .eh-feature-browser__panel { grid-template-rows: auto auto; row-gap: 0; }
+  .eh-journey .eh-feature-browser__panel { grid-template-rows: auto; row-gap: 0; }
   .eh-journey .eh-feature-browser__copy { grid-column: 1; grid-row: 1; align-self: stretch; display: flex; flex-direction: column; }
   .eh-journey .eh-feature-browser__copy .eh-feature-browser__note { margin-top: auto; padding-top: 18px; }
   .eh-journey .eh-feature-browser__copy .eh-feature-browser__steps { margin-bottom: 22px; }
-  .eh-journey .eh-feature-browser__figure { grid-column: 2; grid-row: 1 / span 2; display: grid; grid-template-rows: subgrid; align-self: stretch; }
+  .eh-journey .eh-feature-browser__figure { grid-column: 2; grid-row: 1; display: grid; grid-template-rows: auto; align-self: stretch; }
   .eh-journey .eh-feature-browser__screen { height: 100%; align-self: stretch; }
 }
 
@@ -85,4 +82,36 @@
 .eh-journey .eh-feature-browser__copy .eh-feature-browser__note { color: #b7c5d9; border-top-color: rgba(216, 224, 239, .22); }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .eh-journey .eh-feature-browser__copy { background: rgba(14, 25, 44, .94); }
+}
+
+/* Solid shared surface behind the description and product screenshot. */
+.eh-journey #journey-workspace .eh-feature-browser__panel {
+  padding: 16px;
+  background: #101d30;
+  border: 1px solid rgba(153, 181, 218, .14);
+  border-radius: 28px;
+}
+@media (max-width: 600px) {
+  .eh-journey #journey-workspace .eh-feature-browser__panel {
+    padding: 8px;
+    border-radius: 22px;
+  }
+}
+
+/* One shared panel: the copy has no separate card surface. */
+.eh-journey #journey-workspace .eh-feature-browser__copy.eh-feature-copy-editorial {
+  background: transparent;
+  border-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.eh-journey #journey-workspace .eh-feature-browser__copy.eh-feature-copy-editorial::before,
+.eh-journey #journey-workspace .eh-feature-browser__copy.eh-feature-copy-editorial::after {
+  content: none;
+}
+.eh-journey #journey-workspace .eh-feature-browser__screen {
+  border-color: transparent;
+  box-shadow: none;
 }

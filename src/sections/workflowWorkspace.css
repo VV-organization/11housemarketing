@@ -52,3 +52,32 @@
   font: 400 24px/1 'EH Vetrino', serif;
 }
 .eh-journey .eh-workflow-shift__result[data-active="true"] .eh-workflow-shift__result-number { color: #b8ddf9; }
+
+/* A shared warm accent makes the selected before/after pair explicit. */
+.eh-journey #workflow-compare .eh-workflow-shift__fragment[aria-pressed="true"] {
+  border-color: #e2ca79;
+  box-shadow: 0 0 0 1px #e2ca7933, 0 0 26px #e2ca7926;
+}
+.eh-journey #workflow-compare .eh-workflow-shift__fragment[aria-pressed="true"] strong,
+.eh-journey #workflow-compare .eh-workflow-shift__result[data-active="true"] h4 {
+  color: #fff0bd;
+}
+.eh-journey #workflow-compare .eh-workflow-shift__result[data-active="true"]::before {
+  background: linear-gradient(100deg, #e2ca7926, #e2ca7910);
+  border-color: #e2ca79a6;
+  box-shadow: inset 0 0 20px #e2ca7908, 0 0 18px #e2ca7914;
+}
+.eh-journey #workflow-compare .eh-workflow-shift__result[data-active="true"] .eh-workflow-shift__check {
+  color: #fff0bd;
+  border-color: #e2ca79cc;
+  box-shadow: 0 0 18px #e2ca7938, inset 0 0 10px #e2ca791a;
+}
+.eh-journey #workflow-compare .eh-workflow-shift__result[data-active="true"] .eh-workflow-shift__result-number {
+  color: #f1dfa6;
+}
+.eh-journey #workflow-compare .eh-workflow-shift__bridge g[data-active="true"] .eh-workflow-shift__track {
+  stroke: #eed791;
+  stroke-width: 2;
+  opacity: 1;
+  filter: drop-shadow(0 0 4px #e2ca7999);
+}
