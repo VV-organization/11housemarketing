@@ -65,9 +65,11 @@ export function CelestialSphere() {
     const zodiac = new THREE.Group()
     zodiac.rotation.set(.24, -.25, .12)
     assembly.add(zodiac)
-    ring(zodiac, 2.53, .011, pale)
-    ring(zodiac, 2.48, .021, gold)
-    ring(zodiac, 2.23, .012, gold)
+    const outerRims = [new THREE.Group(), new THREE.Group(), new THREE.Group()]
+    outerRims.forEach(rim => zodiac.add(rim))
+    ring(outerRims[0], 2.53, .011, pale)
+    ring(outerRims[1], 2.48, .021, gold)
+    ring(outerRims[2], 2.23, .012, gold)
     const tickGeometry = new THREE.BoxGeometry(.009, .065, .012)
     const ticks = new THREE.InstancedMesh(tickGeometry, gold, 120)
     const tickTransform = new THREE.Object3D()
@@ -79,7 +81,7 @@ export function CelestialSphere() {
       tickTransform.updateMatrix(); ticks.setMatrixAt(i, tickTransform.matrix)
       ticks.setColorAt(i, new THREE.Color(i % 10 === 0 ? 0xffefc1 : 0xb9a57e))
     }
-    zodiac.add(ticks)
+    outerRims[1].add(ticks)
     const orbits = [new THREE.Group(), new THREE.Group(), new THREE.Group()]
     const moons: THREE.Mesh[] = []
     orbits.forEach((orbit, i) => {
@@ -130,8 +132,14 @@ export function CelestialSphere() {
       last = now
       // Pinterest Icosphere noise: independent gimbal axes around a stable centre.
       // The zodiac rim stays readable while the inner rings make full revolutions.
-      zodiac.rotation.y = -.25 + Math.sin(elapsed * .14) * .22
-      zodiac.rotation.z = .12 + elapsed * .045
+      // Alternating directions and independent tilts reveal the counter-rotation in depth.
+      zodiac.rotation.x = .24 + Math.sin(elapsed * .11) * .08
+      outerRims.forEach((rim, i) => {
+        const direction = i % 2 === 0 ? 1 : -1
+        rim.rotation.x = Math.sin(elapsed * .16 + i * .8) * .18
+        rim.rotation.y = elapsed * direction * (.13 + i * .025)
+        rim.rotation.z = elapsed * direction * (.045 + i * .012)
+      })
       orbits.forEach((orbit, i) => {
         const direction = i % 2 ? -1 : 1
         orbit.rotation.x = .9 + i * .67 + elapsed * direction * (.19 + i * .035)

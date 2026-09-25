@@ -10,6 +10,7 @@ const revealSelector = [
   '.eh-feature-browser__figure',
   '.eh-workflow-shift__system-heading, .eh-workflow-shift__result',
   '.pricing-section__heading > *',
+  '.eh-pricing-cards__card',
   '.eh-pricing-cards__card > :not(.eh-price-atmosphere):not(ul)',
   '.eh-pricing-cards__card > ul > li, .eh-pricing-cards__terms > p',
   '.faq-section > header, .faq-section__list > details',

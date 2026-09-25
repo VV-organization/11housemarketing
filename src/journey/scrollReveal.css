@@ -1,7 +1,7 @@
-.eh-journey[data-motion="full"] [data-scroll-reveal="true"] {
+.eh-journey[data-motion="full"] [data-scroll-reveal="true"][data-scroll-visible] {
   opacity: 0;
   translate: 0 22px;
-  transition: opacity .65s ease, translate .8s cubic-bezier(.16, 1, .3, 1);
+  transition: opacity .65s ease, translate .8s cubic-bezier(.16, 1, .3, 1), background-color .35s, border-color .35s, scale .35s;
   transition-delay: var(--scroll-reveal-delay, 0ms);
 }
 .eh-journey[data-motion="full"] [data-scroll-reveal="true"][data-scroll-visible="true"],
@@ -11,7 +11,7 @@
 }
 .eh-journey [data-scroll-reveal="true"]:focus-within { transition-delay: 0ms; }
 @media (prefers-reduced-motion: reduce) {
-  .eh-journey[data-motion="full"] [data-scroll-reveal="true"] { opacity: 1; translate: none; transition: none; }
+  .eh-journey[data-motion="full"] [data-scroll-reveal="true"][data-scroll-visible] { opacity: 1; translate: none; transition: none; }
 }
 
 /* These elements already have positioned/animated transforms; reveal only their opacity. */
