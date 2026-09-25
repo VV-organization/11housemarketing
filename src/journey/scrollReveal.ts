@@ -1,11 +1,22 @@
-// Explicit scope keeps the approved Hero and its motion untouched.
+// Reveal meaningful content groups individually; avoid hiding an entire tall section.
 const revealSelector = [
+  '.landing-header__brand, .landing-header__nav > a, .landing-header__actions > a',
+  '.eh-opening-editorial__copy > p, .eh-opening-editorial__copy > a',
+  '.eh-celestial-sphere, .eh-journey__explore',
   '.eh-experience--features .eh-experience__heading > *',
   '.eh-feature-browser__tab',
-  '.eh-feature-browser__copy',
+  '.eh-feature-browser__copy > h3, .eh-feature-browser__description',
+  '.eh-feature-browser__steps > li, .eh-feature-browser__note',
   '.eh-feature-browser__figure',
+  '.eh-workflow-shift__system-heading, .eh-workflow-shift__result',
   '.pricing-section__heading > *',
-  '.pricing-motion-stage',
+  '.eh-pricing-cards__card > :not(.eh-price-atmosphere):not(ul)',
+  '.eh-pricing-cards__card > ul > li, .eh-pricing-cards__terms > p',
+  '.faq-section > header, .faq-section__list > details',
+  '.eh-finale-editorial .eh-journey__split-title > span',
+  '.eh-finale-editorial .eh-journey__finale-action > *',
+  '.eh-finale-footer__copyright, .eh-finale-footer__top',
+  '.eh-finale-footer nav > *',
 ].join(',')
 
 export function attachScrollReveal(root: HTMLElement) {
@@ -15,7 +26,7 @@ export function attachScrollReveal(root: HTMLElement) {
     // Re-arm only after an item is below the entrance boundary. Scrolling back
     // to the section then reproduces the entrance without hiding content above.
     entries.forEach(entry => {
-      if (!entry.isIntersecting && entry.boundingClientRect.top >= (entry.rootBounds?.bottom ?? window.innerHeight) - entry.boundingClientRect.height * .1) {
+      if (!entry.isIntersecting && entry.boundingClientRect.top >= window.innerHeight) {
         const item = entry.target as HTMLElement
         item.dataset.scrollVisible = 'false'
         item.style.setProperty('--scroll-reveal-delay', '0ms')
@@ -25,10 +36,10 @@ export function attachScrollReveal(root: HTMLElement) {
       .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left)
       .forEach((entry, index) => {
         const item = entry.target as HTMLElement
-        item.style.setProperty('--scroll-reveal-delay', `${Math.min(index * 140, 1960)}ms`)
+        item.style.setProperty('--scroll-reveal-delay', `${Math.min(index * 90, 360)}ms`)
         item.dataset.scrollVisible = 'true'
       })
-  }, { threshold: .08, rootMargin: '0px 0px -16% 0px' })
+  }, { threshold: .12, rootMargin: '0px 0px -6% 0px' })
   const refresh = () => {
     items.forEach(item => {
       if (!root.contains(item)) { observer.unobserve(item); items.delete(item) }

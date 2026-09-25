@@ -1,7 +1,7 @@
 .eh-journey[data-motion="full"] [data-scroll-reveal="true"] {
   opacity: 0;
-  translate: 0 38px;
-  transition: opacity .85s ease, translate 1s cubic-bezier(.16, 1, .3, 1);
+  translate: 0 22px;
+  transition: opacity .65s ease, translate .8s cubic-bezier(.16, 1, .3, 1);
   transition-delay: var(--scroll-reveal-delay, 0ms);
 }
 .eh-journey[data-motion="full"] [data-scroll-reveal="true"][data-scroll-visible="true"],
@@ -12,4 +12,18 @@
 .eh-journey [data-scroll-reveal="true"]:focus-within { transition-delay: 0ms; }
 @media (prefers-reduced-motion: reduce) {
   .eh-journey[data-motion="full"] [data-scroll-reveal="true"] { opacity: 1; translate: none; transition: none; }
+}
+
+/* These elements already have positioned/animated transforms; reveal only their opacity. */
+.eh-journey[data-motion="full"] :is(.eh-celestial-sphere, .eh-journey__explore)[data-scroll-reveal="true"] {
+  translate: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .eh-journey[data-motion="full"] .faq-section details[open] > p {
+    animation: eh-answer-appear .4s ease both;
+  }
+}
+@keyframes eh-answer-appear {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
 }
